@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>office-ngom</title>
+    <link href="css/main.scss" rel="stylesheet">
+    
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B1KRB4GWBJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B1KRB4GWBJ');
+</script>
+
+<body>
+    <div id = "container">
+        <div id = "bubble"></div>
+        <div id="overlay">
+            <div id="menu">
+                <div id = "title">
+                    <h1>office ngom.</h1>
+                </div>
+                <div id = "middle">
+                    <div id = "about" >
+                        <h1><a href="#descr">about</a></h1>
+                    </div>
+                    
+                    <div id = "contact" class="head">
+                        <h1><a href="#calendly">book an intro call</a></h1>
+                    </div>
+                </div>
+            </div>
+            <div id="center">
+                <h2>what can tech do for you?</h2>
+                <div id="intro">
+                    <p>we help your business leverage advanced technology to achieve applied, impact-fuelled goals.</p>
+                </div>
+                <div id="descr">
+                    <h3>we focus on critical technology thinking. </h3>
+                    <div id = 'txt'>
+                        <p>tech can sound like science-fiction. it's not: it is a set of tools that can elevate your place in the industry. together we deconstruct your financial and social goals and we discover the technology tools that are right for you. we design technology with a purpose, for humans and by humans.</p>
+                    </div>
+                   
+                </div>
+                
+                <div id = "consultancy">
+                    <p>Book an intro call below or email office@officengom.studio</p>
+                </div>
+                <div id="services">
+
+                </div>
+                <div id = "calendly">
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/office-ngom/introcall" style="min-width:320px;height:700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                </div>
+                
+                
+            </div>
+
+            
+        </div>
+
+        
+
+
+            
+        </div>
+        <canvas id="canvas"></canvas>
+
+    </div>
+
+
+</body>
+<script src="index.js"></script>
+<script>
+
+    console.log('from the script')
+    ctx = canvas.getContext('2d');
+    userAgent = navigator.userAgent;
+    
+
+    mobile = false; 
+
+    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+        // the user is using a mobile device, so redirect to the mobile version of the website
+        mobile = true;
+    }
+
+    console.log(mobile)
+    
+    dpr = window.devicePixelRatio;
+    rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.scale(dpr, dpr);
+    canvas.style.width = `${rect.width}px`;
+    canvas.style.height = `${rect.height}px`;
+
+    
+    c = document.getElementById("canvas")
+    ctx.beginPath();
+
+    x = 100,
+    y = 75,
+    // Radii of the white glow.
+    innerRadius = 5,
+    outerRadius = 70,
+    // Radius of the entire circle.
+    radius = 60;
+
+    
+    //check if user on mobile or on browser
+    
+
+    mousePos = { x: undefined, y: undefined };
+    circlePos = {x: 100, y: 100,}
+    radius = canvas.width/20
+
+    
+    function renderCircle( circlePos ) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        gradient = ctx.createRadialGradient(circlePos.x, circlePos.y, innerRadius, circlePos.x, circlePos.y, outerRadius);
+        gradient.addColorStop(0, '#a4c2f4');
+        gradient.addColorStop(1, '#6e97dc');
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(circlePos.x, circlePos.y, radius, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+
+    function changePosition() {
+        can = document.getElementById('canvas')
+
+        if (mobile == false){
+            console.log("running")
+            can.addEventListener('mousemove', (event) => {
+            mousePos = { x: event.clientX, y: event.clientY };
+            circlePos.x = mousePos.x-(radius-5);
+            circlePos.y = mousePos.y-(radius-10);
+            console.log(mousePos)
+            renderCircle( circlePos )})
+        }      
+        
+        if (mobile == true) {
+            can.addEventListener('touchmove', (event) => {
+            mousePos = { x: event.clientX, y: event.clientY };
+            circlePos.x = mousePos.x-(radius-5);
+            circlePos.y = mousePos.y-(radius-10);
+            console.log(mousePos)
+            renderCircle( circlePos )})
+
+        }
+        
+        
+    }
+
+    //renderCircle(circlePos)
+    
+    changePosition();
+</script>
+
+</html>
+
+
+
+
+
+
