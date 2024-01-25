@@ -25,7 +25,7 @@ body {
   width: 40vw; 
   height: 40vw; 
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(248,99,10,0.8) 0%, rgba(120,12,0,1) 100%);
+  background: radial-gradient(circle, rgba(248,99,10,0.8) 0%, rgba(43,4,0,1) 100%);
   position: absolute;
 }
 
@@ -66,7 +66,7 @@ a{
   position: absolute; 
   padding-left: 10%;  
   padding-top: 5%; 
-  padding-right: 15%; 
+  padding-right: 25%; 
 }
 
 #intro{
@@ -91,7 +91,7 @@ a{
 }
 
 #txt {
-  text-align: left;
+  text-align: center;
 }
 
 #consultancy{
