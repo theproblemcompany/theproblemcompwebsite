@@ -69,9 +69,6 @@ a{
   padding-right: 10%; 
 }
 
-#upfront{
-  padding-right: 30%; 
-}
 
 #intro{
   padding-top: 0%; 
@@ -146,6 +143,14 @@ h2 {
   font-size: 50px;
   font-family: Arial, Helvetica, sans-serif;
   color: white; 
+  padding-right: 35%; 
+}
+
+h3 {
+  font-size: 45;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white; 
+  text-align: left !important; 
 }
 
 @media only screen and (max-width: 600px) {
