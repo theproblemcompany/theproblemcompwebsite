@@ -2,8 +2,9 @@
 //redraw particles on canvas resize 
 
 export default function handleText(png) {
+	console.log("text animations: executing script");
 
-	const canvas = document.getElementById("2Dscene");
+	const canvas = document.getElementById("dtscene");
 	const ctx = canvas.getContext("2d");
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;

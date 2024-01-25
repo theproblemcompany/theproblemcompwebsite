@@ -1,3 +1,1 @@
-# theproblemcompwebsite
-
-updated to 2024. demo website version. 
+officengom website v1.0

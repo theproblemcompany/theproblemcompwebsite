@@ -1,4 +1,3 @@
 import './css/main.scss';
-import './js/uicontrols';
-import './js/script';
-
+//import './js/uicontrols';
+//import './js/script';

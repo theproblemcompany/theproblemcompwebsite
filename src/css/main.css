@@ -5,8 +5,6 @@ body {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -14,272 +12,177 @@ body {
   overflow-x: hidden;
 }
 
-.light-theme {
-  color: pink;
+#container {
+  width: 100vw; 
+  height: 500vh;
+  background-color: #a4c2f4;
+  position: relative; 
 }
 
-.dark-theme {
-  color: black;
-}
-
-.dark-theme .img {
-  -webkit-filter: invert(1);
-  filter: invert(1);
-}
-
-#threescene {
+#bubble {
+  right: 0; 
+  top: 0; 
+  width: 40vw; 
+  height: 40vw; 
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(164,194,244,1) 0%, rgba(110,151,220,1) 100%);
   position: absolute;
-  top: 0;
-  left: 0;
-  outline: none;
-  z-index: -1;
 }
 
-#tdscene {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  vertical-align: middle;
+#canvas {
+  width: 100%; 
+  height: 100%;
+  position: absolute; 
+  
 }
 
-#promptsleft {
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  width: 200px;
-  height: 20px;
-  text-align: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 5%;
-  text-transform: uppercase;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12px;
-  z-index: 3;
+#overlay {
+  position: absolute; 
 }
 
-#promptsright {
-  left: 0;
-  bottom: 0;
-  position: absolute;
-  width: 200px;
-  height: 20px;
-  text-align: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 5%;
-  text-transform: uppercase;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12px;
-  z-index: 3;
+a{
+  color: white; 
+  text-decoration: none;
 }
 
-#promptsbottom {
-  bottom: 0;
-  width: 100vw;
-  position: fixed;
+#menu {
+  display: inline-block;
+  position: sticky; 
+  height: 5vh; 
+  width: 100vw; 
+  padding-left: 2%; 
+  padding-right: 2%; 
+  padding-top: 2%;
+  z-index: 5; 
+}
+
+#title{
+  display: inline-block;
+  width: 5vw; 
+  padding-right: 2vw; 
+}
+
+#center{
+  position: absolute; 
+  padding-left: 10%;  
+  padding-top: 5%; 
+  padding-right: 15%; 
+}
+
+#intro{
+  padding-top: 0%; 
+  width: 45%; 
+  color: white; 
+  font-size: 40px;
+  font-weight: 200;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#descr{
+  padding-top: 15%;
   text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 12px;
-  z-index: 3;
+  padding-left: 20% !important;
+  padding-right: 20% !important; 
+  font-size: 20px;
+  padding-right: 30%;
+  font-family: Arial, Helvetica, sans-serif; 
+  color: white;
+
 }
 
-#promptsbottom #btxt {
-  bottom: 0 !important;
+#txt {
+  text-align: left;
 }
 
-#promptscenter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+#consultancy{
+  padding-top: 10%; 
+  width: 50vw; 
+  text-align: right;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+#middle{
+  display: inline-block;
+  width: 100vw; 
+  align-items: center;
   text-align: center;
-  bottom: 0 !important;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-transform: uppercase;
-  font-size: 8px;
-  vertical-align: middle;
 }
 
-.container {
-  height: 100vh;
+.head{
+  margin: 0 auto; 
+  display: inline-block; 
+  padding-left: 5%;
 }
 
-section {
-  height: 150vh;
+#about{
+  margin: 0 auto; 
+  display: inline-block;
+  padding-left: 5%;  
 }
+
+#contact{
+  margin: 0 auto; 
+  display: inline-block;
+  padding-left: 5%;  
+}
+
 
 h1 {
   text-transform: uppercase;
   font-size: small;
   font-family: Arial, Helvetica, sans-serif;
+  color: white; 
 }
 
-#ui {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  top: 0;
-  left: 0;
-  text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: auto;
-  padding-top: 5%;
-  z-index: 1;
+h2 {
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white; 
 }
 
-#ui #logo {
-  min-width: 50px;
-  width: 5%;
-  padding-bottom: 10%;
-}
 
-#ui p {
-  font-size: 100;
-  -webkit-animation: pulse 1s infinite;
-          animation: pulse 1s infinite;
-}
-
-#navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: fixed;
-  width: inherit;
-  height: inherit;
-  color: white;
-  z-index: 2;
-}
-
-#navigation .m {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical !important;
-  -webkit-box-direction: normal !important;
-      -ms-flex-direction: column !important;
-          flex-direction: column !important;
-  width: 3%;
-  height: 100%;
-}
-
-#navigation #controls {
-  height: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-#navigation #dropdown {
-  top: 0;
-  left: 0;
-  position: absolute;
-  padding: 2vw;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  color: black;
-}
-
-#navigation #menu {
-  top: 0;
-  right: 0;
-  position: absolute;
-  padding: 2vw;
-  padding-right: 4vw !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal !important;
-  -webkit-box-direction: normal !important;
-      -ms-flex-direction: row !important;
-          flex-direction: row !important;
-}
-
-#navigation .circle {
-  height: 2px;
-  width: 2px;
-  padding: 2%;
-  background-color: white;
-  border-radius: 50%;
-  z-index: -2;
-}
-
-.circle:hover {
-  width: 5px;
-}
-
-.btn-toggle {
-  background-color: pink;
-  width: 5px;
-}
-
-.btn-toggle:hover {
-  background-color: blue;
-}
-
-.button {
-  padding-top: 5vh;
-  visibility: hidden;
-}
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
+  #center{
+    position: absolute; 
+    padding-left: 5%;  
+    padding-top: 15%; 
+    padding-right: 3%; 
+  }
+
+  h2{
+    font-size: 60px; 
+  }
+
+  #intro{
+    padding-top: 0; 
+    width: 80%; 
+    color: white; 
+    font-size: 20px;
+  }
+
+  #descr{
+    padding-top: 30%;
+    text-align: center;
+    padding-left: 5% !important;
+    padding-right: 5% !important; 
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif; 
+    color: white;
+  
+  }
+
+  #consultancy{
+    padding-top: 10%; 
+    margin: 0;
+    width: 100%; 
+    font-size: 14px; 
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
   }
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    opacity: 100%;
-  }
-  70% {
-    opacity: 70%;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
 
 @keyframes pulse {
   0% {
@@ -292,38 +195,19 @@ h1 {
     opacity: 100%;
   }
 }
-
 @media only screen and (max-width: 600px) {
-  #ui {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  #typebox {
-    font-size: 9px;
-  }
-}
 
+}
 body::-webkit-scrollbar {
-  width: 12px;
-  /* width of the entire scrollbar */
+  width: 12px; /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: none;
-  /* color of the tracking area */
+  background: none; /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.61);
-  /* color of the scroll thumb */
-  border-radius: 20px;
-  /* roundness of the scroll thumb */
-  border: none;
-  /* creates padding around scroll thumb */
-}
-/*# sourceMappingURL=main.css.map */
+  background-color: rgba(255, 255, 255, 0.61); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: none; /* creates padding around scroll thumb */
+}/*# sourceMappingURL=main.css.map */
