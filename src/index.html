@@ -53,6 +53,7 @@
                 </div>
                 
                 <div id = "consultancy">
+                    <h2>⚪ website coming soon ⚪</h2>
                     <p>we focus on physical industries that require creative solutions.</p>
                     <p>book a call if you're ready to discover the problem.</p>
                 </div>
@@ -82,93 +83,6 @@
 
 </body>
 <script src="index.js"></script>
-<script>
-
-    console.log('from the script')
-    ctx = canvas.getContext('2d');
-    userAgent = navigator.userAgent;
-    
-
-    mobile = false; 
-
-    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
-        // the user is using a mobile device, so redirect to the mobile version of the website
-        mobile = true;
-    }
-
-    console.log(mobile)
-    
-    dpr = window.devicePixelRatio;
-    rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx.scale(dpr, dpr);
-    canvas.style.width = `${rect.width}px`;
-    canvas.style.height = `${rect.height}px`;
-
-    
-    c = document.getElementById("canvas")
-    ctx.beginPath();
-
-    x = 100,
-    y = 75,
-    // Radii of the white glow.
-    innerRadius = 5,
-    outerRadius = 70,
-    // Radius of the entire circle.
-    radius = 60;
-
-    
-    //check if user on mobile or on browser
-    
-
-    mousePos = { x: undefined, y: undefined };
-    circlePos = {x: 100, y: 100,}
-    radius = canvas.width/20
-
-    
-    function renderCircle( circlePos ) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        gradient = ctx.createRadialGradient(circlePos.x, circlePos.y, innerRadius, circlePos.x, circlePos.y, outerRadius);
-        gradient.addColorStop(0, '#a4c2f4');
-        gradient.addColorStop(1, '#6e97dc');
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(circlePos.x, circlePos.y, radius, 0, 2 * Math.PI);
-        ctx.fill();
-    }
-
-    function changePosition() {
-        can = document.getElementById('canvas')
-
-        if (mobile == false){
-            console.log("running")
-            can.addEventListener('mousemove', (event) => {
-            mousePos = { x: event.clientX, y: event.clientY };
-            circlePos.x = mousePos.x-(radius-5);
-            circlePos.y = mousePos.y-(radius-10);
-            console.log(mousePos)
-            renderCircle( circlePos )})
-        }      
-        
-        if (mobile == true) {
-            can.addEventListener('touchmove', (event) => {
-            mousePos = { x: event.clientX, y: event.clientY };
-            circlePos.x = mousePos.x-(radius-5);
-            circlePos.y = mousePos.y-(radius-10);
-            console.log(mousePos)
-            renderCircle( circlePos )})
-
-        }
-        
-        
-    }
-
-    //renderCircle(circlePos)
-    
-    changePosition();
-</script>
-
 </html>
 
 
