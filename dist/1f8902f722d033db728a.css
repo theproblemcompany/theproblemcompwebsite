@@ -7,6 +7,7 @@ body {
   margin: 0;
   display: flex;
   overflow-x: hidden;
+  color: black; 
 }
 
 
@@ -39,7 +40,7 @@ body {
 }
 
 a{
-  color: black !important;
+  color: white; 
   text-decoration: none;
 }
 
@@ -59,7 +60,6 @@ a{
   display: inline-block;
   width: 5vw; 
   padding-right: 2vw; 
-  color: black !important;
 }
 
 #center{
@@ -67,7 +67,6 @@ a{
   padding-left: 10%;  
   padding-top: 10%; 
   padding-right: 10%; 
-  color: black !important;
 }
 
 #upfront{
@@ -77,7 +76,7 @@ a{
 #intro{
   padding-top: 0%; 
   width: 45%; 
-  color: black !important;
+  color: white; 
   font-size: 30px;
   font-weight: 200;
   font-family: Arial, Helvetica, sans-serif;
@@ -91,7 +90,7 @@ a{
   font-size: 20px;
   padding-right: 30%;
   font-family: Arial, Helvetica, sans-serif; 
-  color: black !important;
+  color: white;
 
 }
 
@@ -115,7 +114,6 @@ a{
   width: 100vw; 
   align-items: center;
   text-align: center;
-  color: black !important;
 }
 
 .head{
@@ -128,7 +126,6 @@ a{
   margin: 0 auto; 
   display: inline-block;
   padding-left: 5%;  
-  color: black !important;
 }
 
 #contact{
@@ -142,19 +139,19 @@ h1 {
   text-transform: uppercase;
   font-size: small;
   font-family: Arial, Helvetica, sans-serif;
-  color: black !important;
+  color: white; 
 }
 
 h2 {
   font-size: 50px;
   font-family: Arial, Helvetica, sans-serif;
-  color: black !important;
+  color: white; 
 }
 
 h3 {
   font-size: 45;
   font-family: Arial, Helvetica, sans-serif;
-  color: black !important; 
+  color: white; 
   text-align: center; 
 }
 

@@ -40,7 +40,7 @@
             <div id="center">
                 <h2 id= "upfront">the company that tells you what the problem with AI is.</h2>
                 <div id="intro">
-                    <p>the problem company is a no-nonsense technology development company.</p>
+                    <p id="itxt">the problem company is a no-nonsense technology development company.</p>
                 </div>
                 <div id="descr">
                     <div id = 'txt'>
@@ -66,19 +66,51 @@
                 </div>
                 
                 
-            </div>
-
-            
+            </div>         
         </div>
-
-        
-
-
             
         </div>
         <canvas id="canvas"></canvas>
 
     </div>
+
+    <script>
+        //var userLang = navigator.language || navigator.userLanguage; 
+        upfront = document.getElementById('upfront')
+        itxt = document.getElementById('itxt')
+        rightpar = document.getElementById('rightpar')
+
+        var userLang = "ro"
+
+        var language = {
+            eng: {
+                header: "the company that tells you what the problem with AI is.",
+                itxt: "the problem company is a no-nonsense technology development company.",
+                rightpar: "there's so much cutting-edge tech research that SMEs never get access to.",
+
+            },
+            
+            ro: {
+                header: "compania care îți spune cum stă treaba cu AI-ul.",
+                itxt: "te-ai saturat de task-uri repetitive? iti explicam cum poti implementa tehnologia avansata pentru a iti automatiza afacerea.",
+                rightpar: "Toată lumea vorbește despre AI. Însă cum te poate ajuta pe tine?",
+
+            }
+        };
+
+        if (userLang === "ro" || userLang === "ro-mo") {
+            upfront.textContent = language.ro.header
+            itxt.textContent = language.ro.itxt
+            rightpar.textContent = language.ro.rightpar
+        }
+
+        else {
+            upfront.textContent = language.eng.header
+            itxt.textContent = language.eng.itxt
+        }
+
+
+    </script>
 
 
 </body>
