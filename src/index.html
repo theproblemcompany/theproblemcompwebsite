@@ -7,6 +7,7 @@
     <link rel="icon" href="./favicon.png" type="image/x-icon">
     <title>the problem company</title>
     <link href="./css/main.css" rel="stylesheet">
+    <meta name="description" content="" />
     
 </head>
 <!-- Google tag (gtag.js) -->
@@ -29,11 +30,11 @@
                 </div>
                 <div id = "middle">
                     <div id = "about" >
-                        <h1><a href="#descr">about</a></h1>
+                        <h1 id= "mita"><a href="#descr">about</a></h1>
                     </div>
                     
                     <div id = "contact" class="head">
-                        <h1><a href="#calendly">book an intro call</a></h1>
+                        <h1 id="mitb"><a href="#calendly">book an intro call</a></h1>
                     </div>
                 </div>
             </div>
@@ -45,16 +46,15 @@
                 <div id="descr">
                     <div id = 'txt'>
                         <h3 id="rightpar">there's so much cutting-edge tech research that SMEs never get access to.</h3>
-                        <p>SMEs have the customers and the market-know-how to become successful scale-ups. our goal is to lower the accessibility threshold to high tech for small and medium-sized businesses.</p>
-                        <p>how? through no-nonsense consulting and applied, profit-driven R&D innovation cycles.</p>
-                        <p>tech is not the problem. accessibility is.</p>
+                        <p id="rpa">SMEs have the customers and the market-know-how to become successful scale-ups. our goal is to lower the accessibility threshold to high tech for small and medium-sized businesses.</p>
+                        <p id="rpb">how? through no-nonsense consulting and applied, profit-driven R&D innovation cycles.</p>
+                        <p id="rpc">tech is not the problem. accessibility is.</p>
                     </div>
                    
                 </div>
                 
                 <div id = "consultancy">
-                    <h3>⚪ website coming soon ⚪</h3>
-                    <p>we focus on physical industries that require creative solutions.</p>
+                    <h3> website coming soon </h3>
                     <p>book a call if you're ready to discover the problem.</p>
                 </div>
                 <div id="services">
@@ -75,25 +75,41 @@
     </div>
 
     <script>
-        //var userLang = navigator.language || navigator.userLanguage; 
+        var userLang = navigator.language || navigator.userLanguage; 
         upfront = document.getElementById('upfront')
         itxt = document.getElementById('itxt')
         rightpar = document.getElementById('rightpar')
+        mita = document.getElementById('mita')
+        mitb = document.getElementById('mitb')
+        rpa = document.getElementById('rpa')
+        rpb = document.getElementById('rpb')
+        rpc = document.getElementById('rpc')
 
-        var userLang = "ro"
+        //var userLang = "en"
 
         var language = {
             eng: {
                 header: "the company that tells you what the problem with AI is.",
-                itxt: "the problem company is a no-nonsense technology development company.",
-                rightpar: "there's so much cutting-edge tech research that SMEs never get access to.",
+                itxt: "we have some explaining to do: this is about how YOU can use advanced technology to automate your business.",
+                rightpar: "Everyone talks about AI. But what can it do for you?",
+                mita: "about", 
+                mitb: "book a call", 
+                rpa: "So. You’re an SME, you most likely already have the clients and the market-know-how. It’s time to scale. But you’re struggling with finding qualified work force or maybe with your operations. And maybe, well- maybe- AI is the solution. But where to start? " , 
+                rpb: "SMEs are the perfect candidates for automation. And guess what? We’re here to lower the accessibility threshold to advanced technology- oh, maybe even experimental, unique technology, tailor-suited to your unique process. ", 
+                rpc: "We are an R&D company focused on businesses dealing with physical processes- exactly those that need creative technology solutions, because something off-the-shelf just won’t do it. Our goal is to bring cutting-edge technology to the market through profit-driven, fast innovation cycles and no-nonsense consulting. We’re here for you. "    
 
             },
             
             ro: {
                 header: "compania care îți spune cum stă treaba cu AI-ul.",
-                itxt: "te-ai saturat de task-uri repetitive? iti explicam cum poti implementa tehnologia avansata pentru a iti automatiza afacerea.",
+                itxt: "îți explicăm cum poți implementa tehnologia avansată pentru a îți automatiza afacerea.",
                 rightpar: "Toată lumea vorbește despre AI. Însă cum te poate ajuta pe tine?",
+                mita: "despre", 
+                mitb: "book a call", 
+                rpa: "Ai deja clienții și cunoștințele de piață, iar compania ta este pregătită să scaleze. Însă, ai probleme cu forța de muncă calificată sau poate cu operațiunile. Poate că tehnologia e răspunsul, însă, de unde să începi?" , 
+                rpb: "IMM-urile sunt candidații perfecți pentru automatizare. Noi suntem aici să coboram nivelul de accesibilitate la tehnologia de grad înalt- poate chiar experimentală. ", 
+                rpc: "Suntem o companie de cercetare și dezvoltare concentrată pe afacerile cu procese fizice, care au nevoie de tehnologie creativă. Scopul nostru este să aducem tehnologia avansată în piață prin cicluri de inovație rapide, concentrate pe profit și consultanță directă și la obiect." 
+
 
             }
         };
@@ -102,11 +118,18 @@
             upfront.textContent = language.ro.header
             itxt.textContent = language.ro.itxt
             rightpar.textContent = language.ro.rightpar
+            rpa.textContent = language.ro.rpa
+            rpb.textContent = language.ro.rpb
+            rpc.textContent = language.ro.rpc
         }
 
         else {
             upfront.textContent = language.eng.header
+            rightpar.textContent = language.eng.rightpar
             itxt.textContent = language.eng.itxt
+            rpa.textContent = language.eng.rpa
+            rpb.textContent = language.eng.rpb
+            rpc.textContent = language.eng.rpc
         }
 
 
