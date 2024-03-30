@@ -1,13 +1,33 @@
 html,
 body {
   margin: 0;
-  background-color: #f3f2f0;
+  padding: 0;
   width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
   cursor: url("./cursor.png"), auto;
 }
 
 body {
   overflow-x: hidden;
+}
+
+#container {
+  width: 100vw;
+  height: 500vh;
+  background-color: #f3f2f0;
+  position: relative;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#overlay {
+  position: absolute;
 }
 
 a {
@@ -28,7 +48,7 @@ a {
   z-index: 2;
 }
 
-#footer {
+#backtotop {
   position: fixed;
   bottom: 0;
   width: 100vw;
@@ -36,122 +56,6 @@ a {
   display: flex;
   justify-content: center;
   padding-bottom: 0.5%;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  position: static;
-  width: 100vw;
-  margin: 0;
-  top: 0;
-  left: 0;
-}
-
-#section1 {
-  padding-left: 8%;
-  padding-top: 14%;
-  padding-right: 3%;
-  color: black !important;
-  z-index: 1;
-  height: auto;
-  width: 100%;
-}
-
-#section2 {
-  width: 100vw;
-  height: auto;
-  font-size: 20px;
-  text-align: left;
-  color: black !important;
-  padding-top: 10%;
-  padding-right: 10%;
-  padding-left: 10%;
-}
-
-#section3 {
-  width: 100%;
-  height: auto;
-  flex-direction: column !important;
-}
-
-#section4 {
-  width: 100%;
-  text-align: center;
-  flex-direction: column !important;
-}
-
-.row {
-  height: 100%;
-  margin: 0;
-  vertical-align: top;
-  position: relative;
-}
-
-.row-left {
-  order: 1;
-}
-
-.row-right {
-  order: 2;
-}
-
-#s1lrow {
-  width: 40%;
-}
-
-#s1rrow {
-  width: 50%;
-}
-
-#s2lrow {
-  width: 35%;
-  height: 300px;
-}
-
-#s2rrow {
-  width: 30%;
-}
-
-.textbox {
-  margin: 0;
-}
-
-#s2txb {
-  position: absolute;
-  margin-left: 20%;
-  bottom: 0;
-  right: 0;
-}
-
-#s3txba {
-  width: 30vw;
-  position: relative;
-  margin-left: 20vw;
-  display: block;
-}
-
-#s3txbb {
-  width: 30vw;
-  position: relative;
-  margin-left: 30vw;
-  display: block;
-}
-
-#s4txb {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 10%;
-}
-
-#boxlift {
-  width: 55%;
-  height: 55%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
 }
 
 #bckttp {
@@ -167,10 +71,87 @@ a {
   color: black !important;
 }
 
+#center {
+  position: relative;
+  padding-left: 8%;
+  padding-top: 10%;
+  padding-right: 3%;
+  color: black !important;
+  z-index: 1;
+  width: 100vw;
+  height: 70vh;
+}
+
+#rightcenter {
+  display: inline-block;
+  height: 100%;
+  width: 40%;
+  vertical-align: top;
+}
+
+#textbox {
+  margin-left: 8%;
+  margin-top: 10%;
+  margin-right: 5%;
+}
+
+#leftcenter {
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+  vertical-align: top;
+}
+
+#boxlift {
+  width: 80%;
+  height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#intro {
+  padding-top: 2%;
+}
+
+#descr {
+  width: 100vw;
+  height: 40vh;
+  position: block;
+  font-size: 20px;
+  text-align: left;
+  color: black !important;
+  padding-top: 7%;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+#leftdescr {
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  margin-left: 100px;
+  vertical-align: top;
+}
+
+#rightdescr {
+  display: inline-block;
+  width: 40%;
+  height: 100%;
+  vertical-align: top;
+}
+
+#descrbot {
+  width: 100vh;
+  text-align: center;
+}
+
 #babybottle {
   top: 0;
   right: 0;
-  width: 80%;
+  width: 70%;
   margin-left: 50px;
 }
 
@@ -186,6 +167,11 @@ a {
 
 #txt {
   text-align: left;
+}
+
+#rpb {
+  padding-top: 6%;
+  text-align: center !important;
 }
 
 #rpc {
@@ -245,7 +231,7 @@ h2 {
 }
 
 p {
-  font-family: manropeextralight;
+  font-family: manropethin;
   font-size: 23px;
   color: black !important;
   line-height: 1.3;
@@ -253,9 +239,14 @@ p {
 
 h3 {
   font-size: 45;
-  font-family: manropemedium;
+  font-family: interregular;
   color: black !important;
   text-align: center;
+}
+
+#rightpar {
+  text-align: left !important;
+  padding-bottom: 5%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -265,56 +256,34 @@ h3 {
     overflow-x: hidden !important;
     height: auto !important;
   }
-  h1 {
-    font-size: 20px !important;
+  #center {
+    position: absolute;
+    padding-left: 5%;
+    padding-top: 15%;
+    padding-right: 3%;
   }
-  h2 {
-    font-size: 30px !important;
+  #intro {
+    padding-top: 0;
+    width: 80%;
+    color: white;
+    font-size: 20px;
   }
-  p {
-    font-size: 20px !important;
+  #descr {
+    width: 100vw;
+    height: 80vh;
+    text-align: center;
+    padding-left: 50% !important;
+    padding-right: 5% !important;
+    font-size: 16px;
+    background-color: green;
   }
-  .container {
-    display: flex;
-    flex-direction: column !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .row {
-    width: 100vw !important;
-    margin: 0 !important;
-  }
-  .row-right {
-    order: 1;
+  #consultancy {
+    padding-top: 10%;
+    margin: 0;
     width: 100%;
-  }
-  .row-left {
-    order: 2;
-    width: 100%;
-  }
-  #s1rrow {
-    padding-top: 25%;
-    padding-bottom: 8%;
-  }
-  #s2rrow {
-    padding-top: 20%;
-  }
-  .textbox {
-    margin: 30px !important;
-    width: auto;
-  }
-  #s2lrow {
-    height: 150px;
-  }
-  #s3txba {
-    width: 90vw;
-  }
-  #s3txbb {
-    padding-top: 1% !important;
-    width: 90vw;
-  }
-  #boxlift {
-    width: 70%;
+    font-size: 14px;
+    font-family: interregular;
+    color: white;
   }
 }
 @keyframes pulse {
@@ -326,21 +295,6 @@ h3 {
   }
   100% {
     opacity: 100%;
-  }
-}
-.scroller {
-  --scrollbar-color-thumb: #e83c60;
-  --scrollbar-color-track: none;
-  --scrollbar-width: 12px;
-  --scrollbar-width-legacy: 10px;
-  --scrollbar-border-radius: 20px;
-}
-
-/* Modern browsers with `scrollbar-*` support */
-@supports (scrollbar-width: auto) {
-  .scroller {
-    scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
-    scrollbar-width: var(--scrollbar-width);
   }
 }
 body::-webkit-scrollbar {
@@ -358,37 +312,37 @@ body::-webkit-scrollbar-thumb {
 } 
 @font-face {
   font-family: "manropebold";
-  src: url("./font/Manrope-Bold.woff2") format("woff2");
+  src: url("./font/bold-webfont.woff2") format("woff2"), url("./font/bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "manropemedium";
-  src: url("./font/Manrope-Medium.woff2") format("woff2");
+  src: url("./font/medium-webfont.woff2") format("woff2"), url("./font/medium-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "manroperegular";
-  src: url("./font/Manrope-Regular.woff2") format("woff2");
+  src: url("./font/regular-webfont.woff2") format("woff2"), url("./font/regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "manropelight";
-  src: url("./font/Manrope-Light.woff2") format("woff2");
+  src: url("./font/light-webfont.woff2") format("woff2"), url("./font/light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "manropesemibold";
-  src: url("./font/Manrope-SemiBold.woff2") format("woff2");
+  src: url("./font/semibold-webfont.woff2") format("woff2"), url("./font/semibold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "manropeextralight";
-  src: url("./font/Manrope-ExtraLight.woff2") format("woff2");
+  font-family: "manropethin";
+  src: url("./font/thin-webfont.woff2") format("woff2"), url("./font/thin-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }/*# sourceMappingURL=main.css.map */
