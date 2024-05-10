@@ -8,6 +8,7 @@ body {
 
 body {
   overflow-x: hidden;
+  background-color: rgb(243, 242, 240);
 }
 
 a {
@@ -28,7 +29,7 @@ a {
   z-index: 2;
 }
 
-#footer {
+#stickybot {
   position: fixed;
   bottom: 0;
   width: 100vw;
@@ -46,6 +47,30 @@ a {
   margin: 0;
   top: 0;
   left: 0;
+}
+
+.footer {
+  width: vw;
+  height: 200px;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 4%;
+}
+
+.frow {
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 6px;
+}
+
+#privacypolicy {
+  padding-top: 10%;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-bottom: 5%;
+  height: 40vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 #section1 {
@@ -167,6 +192,24 @@ a {
   color: black !important;
 }
 
+#tabs {
+  display: inline-block;
+  width: 50vw;
+  padding-left: 5%;
+  padding-right: -5%;
+}
+
+.menuitem {
+  width: 200px;
+  top: 0;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: inline-block;
+}
+
 #babybottle {
   top: 0;
   right: 0;
@@ -252,10 +295,20 @@ p {
 }
 
 h3 {
+  font-size: 18;
+  font-family: manropemedium;
+}
+
+h4 {
   font-size: 45;
   font-family: manropemedium;
   color: black !important;
   text-align: center;
+}
+
+h5 {
+  font-size: 12px;
+  font-family: manroperegular;
 }
 
 @media only screen and (max-width: 600px) {
@@ -264,6 +317,9 @@ h3 {
     max-width: 100% !important;
     overflow-x: hidden !important;
     height: auto !important;
+  }
+  .menuitem {
+    visibility: hidden;
   }
   h1 {
     font-size: 20px !important;
