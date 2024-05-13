@@ -14,6 +14,7 @@ body {
 a {
   color: black !important;
   text-decoration: none;
+  z-index: 3; 
 }
 
 #menu {
@@ -85,6 +86,15 @@ a {
 
 #section2 {
   width: 100vw;
+  height: 60vh;
+  font-size: 20px;
+  align-items: center;
+  color: black !important;
+  padding-top: 10%;
+}
+
+#section3 {
+  width: 100vw;
   height: auto;
   font-size: 20px;
   text-align: left;
@@ -94,13 +104,14 @@ a {
   padding-left: 10%;
 }
 
-#section3 {
+
+#section4 {
   width: 100%;
   height: auto;
   flex-direction: column !important;
 }
 
-#section4 {
+#section5 {
   width: 100%;
   text-align: center;
   flex-direction: column !important;
@@ -173,10 +184,18 @@ a {
   width: 55%;
   height: 55%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+#question{ 
+  padding-top: 10%; 
+  left: 0; 
+  right: 0; 
+  width: 100%; 
+  text-align: center;
 }
 
 #bckttp {
@@ -221,7 +240,7 @@ a {
   width: 80%;
   height: 80%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -318,9 +337,6 @@ h5 {
     overflow-x: hidden !important;
     height: auto !important;
   }
-  .menuitem {
-    visibility: hidden;
-  }
   h1 {
     font-size: 20px !important;
   }
@@ -411,7 +427,8 @@ body::-webkit-scrollbar-thumb {
   background-color: #e83c60; /* color of the scroll thumb */
   border-radius: 20px; /* roundness of the scroll thumb */
   border: none; /* creates padding around scroll thumb */
-} 
+}
+
 @font-face {
   font-family: "manropebold";
   src: url("./font/Manrope-Bold.woff2") format("woff2");
@@ -447,4 +464,4 @@ body::-webkit-scrollbar-thumb {
   src: url("./font/Manrope-ExtraLight.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-}/*# sourceMappingURL=main.css.map */
+}

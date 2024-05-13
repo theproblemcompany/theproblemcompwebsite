@@ -1,39 +1,57 @@
-#postbody{
-    height: 100vh; 
-    padding-right: 5%; 
-    padding-left: 5%; 
-}
-
-.innerbody{
-    width: 100%; 
-    padding-left: 2%; 
-}
-
-.event-title{
+#postbody {
+    height: 100vh;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  
+  .innerbody {
+    width: 100%;
+    padding-left: 2%;
+    z-index: 2;
+    
+  }
+  
+  #starimg{
+    position: absolute; 
+    z-index: 0;
+    opacity: 0.2;
+    width: 35%;
+    left: 0; 
+    top: 0; 
+  }
+  
+  .event-title {
     text-transform: capitalize;
-}
-
-.event-details{
+  }
+  
+  .event-details {
     font-family: manroperegular;
-    font-size: 13px; 
-}
-
-.description{
-    font-family: manroperegular; 
-    font-size: 15px; 
-    padding-top: 15px; 
-}
-
-.temporary-buy-button{
+    font-size: 13px;
+  }
+  
+  .description {
+    font-family: manroperegular;
+    font-size: 15px;
+    padding-top: 15px;
+  }
+  
+  .temporary-buy-button {
     background-color: transparent;
-    border-radius: 5px; 
-    border: 1px solid grey; 
-    width: 200px; 
+    border-radius: 5px;
+    border: 1px solid #e83d61;
+    width: 200px;
+    margin-left: 0; 
+    margin-right: 0; 
     text-align: center;
-    color: grey; 
-    margin-top: 1%; 
-}
-
-.event-book{
-    padding-top: 2%; 
-}
+    color: #e83d61;
+    margin-top: 5%;
+    margin-left: 35%; 
+    margin-bottom: 10%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .event-book {
+    padding-top: 2%;
+  }/*# sourceMappingURL=eventpost.css.map */
