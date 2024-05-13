@@ -318,9 +318,6 @@ h5 {
     overflow-x: hidden !important;
     height: auto !important;
   }
-  .menuitem {
-    visibility: hidden;
-  }
   h1 {
     font-size: 20px !important;
   }
@@ -447,4 +444,4 @@ body::-webkit-scrollbar-thumb {
   src: url("./font/Manrope-ExtraLight.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-}/*# sourceMappingURL=main.css.map */
+}

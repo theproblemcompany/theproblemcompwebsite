@@ -1,1 +1,0 @@
-function loadSnippet(t){console.log("Loadhtml.js: Function running");const n=document.querySelector(".target");fetch(`html${t}.html`).then((t=>{if(t.ok)return t.text()})).then((t=>{n.innerHTML=t}))}

@@ -7,6 +7,17 @@
 .innerbody {
   width: 100%;
   padding-left: 2%;
+  z-index: 2;
+  
+}
+
+#starimg{
+  position: absolute; 
+  z-index: 0;
+  opacity: 0.2;
+  width: 35%;
+  left: 0; 
+  top: 0; 
 }
 
 .event-title {
@@ -27,11 +38,18 @@
 .temporary-buy-button {
   background-color: transparent;
   border-radius: 5px;
-  border: 1px solid grey;
+  border: 1px solid #e83d61;
   width: 200px;
+  margin-left: 0; 
+  margin-right: 0; 
   text-align: center;
-  color: grey;
-  margin-top: 1%;
+  color: #e83d61;
+  margin-top: 5%;
+  margin-left: 35%; 
+  margin-bottom: 10%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .event-book {

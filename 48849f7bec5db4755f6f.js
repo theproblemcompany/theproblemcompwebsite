@@ -1,1 +1,0 @@
-console.log("Loadhtml.js: Function running");const targetEl=document.querySelector(".target"),loadSnippet=t=>{fetch(`html${t}.html`).then((t=>{if(t.ok)return t.text()})).then((t=>{targetEl.innerHTML=t}))};window.onload=function(){setTimeout(console.log("Is this running?"),2e3),console.log("Loadhtml.js: Buttons loaded")};

@@ -1,1 +1,0 @@
-const targetEl=document.querySelector(".target"),loadSnippet=t=>{fetch(`html${t}.html`).then((t=>{if(t.ok)return t.text()})).then((t=>{targetEl.innerHTML=t}))};document.querySelector(".eventsbutton").addEventListener(loadSnippet(1)),document.querySelector(".blogbutton").addEventListener(loadSnippet(2));
