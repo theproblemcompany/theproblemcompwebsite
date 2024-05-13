@@ -1,7 +1,7 @@
-function loadSnippet(number) {
-  console.log('Loadhtml.js: Function running')
-  const targetEl = document.querySelector('.target');
-  fetch(`html${number}.html`)
+const targetEl = document.querySelector('.target');
+
+const loadSnippet = number => {
+    fetch(`./snippets/html${number}.html`)
       .then(res => {
         if (res.ok) {
             return res.text();
@@ -11,4 +11,4 @@ function loadSnippet(number) {
       .then(htmlSnippet => {
         targetEl.innerHTML = htmlSnippet;
       });
-  }
+};

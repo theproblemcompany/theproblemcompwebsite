@@ -7,8 +7,8 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link href="./css/main.css" rel="stylesheet">
     <link href="./css/toolbox.css" rel="stylesheet">
+    <script defer src="./js/loadhtml.js"></script>
     <script src="./js/sidebar.js"></script>
-    <script src="./js/loadhtml.js"></script>
 </head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DYNZST7ST"></script>
@@ -20,26 +20,6 @@
       gtag('config', 'G-7DYNZST7ST');
     </script>
 
-   <script>
-
-    function loadSnippet(number) {
-      console.log('Loadhtml.js: Function running')
-      const targetEl = document.querySelector('.target');
-      //fetch(`./snippets/html${number}.html`)
-      fetch(`html${number}.html`)
-          .then(res => {
-            if (res.ok) {
-                return res.text();
-            }
-          })
-    
-          .then(htmlSnippet => {
-            targetEl.innerHTML = htmlSnippet;
-          });
-    
-        console.log('Loadhtml.js: Buttons active')
-      }
-    </script>
 
 <body>
     <div id="header">
@@ -66,9 +46,6 @@
                     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
                 <style type="text/css">
                       #mc_embed_signup{background:#ffffff95; clear:center; font-size: 14px; font-family: manropelight; width: 500px; text-align: center;}
-                      @media only screen and (max-width: 600px) {
-                        #mc_embed_signup{width: 350px}
-                      }
                       /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
                          We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
               </style>
@@ -100,9 +77,6 @@
             
         </div>
         <div class= 'sidebar dropdown row row-right' id="right-side-bar">
-            <a href="toolbox.html" class="sidebutton backbutton"><h3>Back</h3></a>
-            <button onclick='loadSnippet(1)' class= "sidebutton eventsbutton"><h3>Events</h3></button>
-            <button onclick='loadSnippet(2)' class="sidebutton blogbutton"><h3>Blog</h3></button>
         </div>
     </div>
 

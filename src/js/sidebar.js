@@ -17,49 +17,25 @@ function check_if_mobile(target, mobilesnippet, desktopsnippet){
         });
     }
 
-//    else{
-//        fetch(desktopsnippet) 
-//          .then(res => {
+    else{
+        fetch(desktopsnippet) 
+          .then(res => {
 
-//            if (res.ok) {
-//                return res.text();
-//            }
-//        })
+            if (res.ok) {
+                return res.text();
+            }
+        })
 
-//         .then(desktopsnippet => {
-//            target.innerHTML = desktopsnippet; 
-//        }); 
-//    }
+          .then(desktopsnippet => {
+            target.innerHTML = desktopsnippet; 
+        }); 
+    }
 
-}
-
-
-function update_buttons(target){
-  const loadSnippet = number => {
-    fetch(`html${number}.html`)
-      .then(res => {
-        if (res.ok) {
-            return res.text();
-        }
-      })
-  
-      .then(htmlSnippet => {
-        target.innerHTML = htmlSnippet;
-      });
-  };
-
-  document.querySelector('.eventsbutton').addEventListener(loadSnippet(1));
-  document.querySelector('.blogbutton').addEventListener(loadSnippet(2));
 }
 
 window.onload = function(){
-  const target = document.querySelector('.sidebar');
-    console.log(`Sidebar.js: -${target}`)
-    htmlSnippetmobile = 'dropdownsidebar.html'
-    htmlSnippetdesktop = 'sidebar.html'
-    console.log(`Sidebar.js: -${htmlSnippetmobile}`)
-    console.log('Sidebar.js: Function running')
+    const target = document.querySelector('.sidebar');
+    htmlSnippetmobile = `./snippets/dropdownsidebar.html`
+    htmlSnippetdesktop = `./snippets/sidebar.html`
     check_if_mobile(target, htmlSnippetmobile, htmlSnippetdesktop)
 }
-
-//setTimeout(update_buttons(target), 8000)
