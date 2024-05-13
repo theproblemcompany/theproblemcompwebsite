@@ -1,0 +1,1 @@
+function check_if_mobile(e,t){window.matchMedia("(max-width: 600px)").matches&&fetch(t).then((e=>{if(e.ok)return e.text()})).then((t=>{e.innerHTML=t}))}window.onload=function(){const e=document.querySelector(".sidebar");htmlSnippetmobile="dropdownsidebar.html",check_if_mobile(e,htmlSnippetmobile),document.write("this function ran")};
