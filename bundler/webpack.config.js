@@ -51,6 +51,38 @@ module.exports = {
             template: "./src/index.html",
             filename: "./index.html"
         }),
+        new HtmlWebPackPlugin({
+            template: "./src/toolbox.html",
+            filename: "./toolbox.html"
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/privacy.html",
+            filename: "./privacy.html"
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/snippets/dropdownsidebar.html",
+            filename: "./dropdownsidebar.html"
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/snippets/sidebar.html",
+            filename: "./sidebar.html"
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/snippets/html1.html",
+            filename: "./html1.html"
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/snippets/html2.html",
+            filename: "./html2.html"
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/snippets/html3.html",
+            filename: "./html3.html"
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/snippets/html4.html",
+            filename: "./html4.html"
+        }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"

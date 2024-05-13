@@ -192,10 +192,67 @@ h3 {
   #consultancy{
     padding-top: 10%; 
     margin: 0;
+<<<<<<< Updated upstream
     width: 100%; 
     font-size: 14px; 
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+=======
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+  }
+  h1 {
+    font-size: 20px !important;
+  }
+  h2 {
+    font-size: 30px !important;
+  }
+  p {
+    font-size: 20px !important;
+  }
+  .container {
+    display: flex;
+    flex-direction: column !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .row {
+    width: 100vw !important;
+    margin: 0 !important;
+  }
+  .row-right {
+    order: 1;
+    width: 100%;
+  }
+  .row-left {
+    order: 2;
+    width: 100%;
+  }
+  #s1rrow {
+    padding-top: 25%;
+    padding-bottom: 8%;
+  }
+  #s2rrow {
+    padding-top: 20%;
+  }
+  .textbox {
+    margin: 30px !important;
+    width: auto;
+  }
+  #s2lrow {
+    height: 150px;
+  }
+  #s3txba {
+    width: 90vw;
+  }
+  #s3txbb {
+    padding-top: 1% !important;
+    width: 90vw;
+  }
+  #boxlift {
+    width: 70%;
+>>>>>>> Stashed changes
   }
 }
 

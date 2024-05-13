@@ -1,0 +1,1 @@
+console.log("Loadhtml.js: Function running");const targetEl=document.querySelector(".target"),loadSnippet=t=>{fetch(`html${t}.html`).then((t=>{if(t.ok)return t.text()})).then((t=>{targetEl.innerHTML=t}))};setTimeout(document.querySelector(".eventsbutton").addEventListener(loadSnippet(1)),500),setTimeout(document.querySelector(".blogbutton").addEventListener(loadSnippet(2)),500);
