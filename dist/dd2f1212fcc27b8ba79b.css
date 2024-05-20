@@ -14,12 +14,6 @@
   align-items: center;
 }
 
-#eventscont {
-  padding-left: 10%;
-  padding-right: 10%;
-  width: 70%; 
-}
-
 #target-container {
   width: 70%;
   height: 100%;
@@ -89,6 +83,10 @@
 
 #events-rr {
   background-color: transparent;
+}
+
+#eventscont {
+  height: 100%;
 }
 
 .target {

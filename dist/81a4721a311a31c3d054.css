@@ -14,17 +14,9 @@
   align-items: center;
 }
 
-#eventscont {
-  padding-left: 10%;
-  padding-right: 10%;
-  width: 70%; 
-}
-
 #target-container {
   width: 70%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .tcontainer {
@@ -89,6 +81,10 @@
 
 #events-rr {
   background-color: transparent;
+}
+
+#eventscont {
+  height: 100%;
 }
 
 .target {
@@ -225,25 +221,14 @@
   }
   .target {
     height: 100%;
-    width: 90vw;
-    margin-top: 15%;
-    margin-left: 50px;
+    width: 100vw;
     align-items: center;
-  }
-  .tcontainer {
-    margin-top: 2% !important;
-    display: flex;
-    flex-direction: column;
-  }
-  #target-container {
-    width: 70%;
-    height: 100%;
+    margin: 0;
   }
   .inner-toolbox {
     height: 100vh;
-    width: 95%;
-    margin-left: 10px;
-    text-align: center;
+    padding-left: 2%;
+    padding-right: 4%;
   }
   .event {
     width: auto;
@@ -301,9 +286,6 @@
   .card-time {
     font-size: 4px;
     font-family: manropebold;
-  }
-  .sidebar {
-    margin-top: 100px;
   }
   .dropbtn {
     padding: 15px;

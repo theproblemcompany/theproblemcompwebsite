@@ -8,6 +8,25 @@
     <link href="./css/main.css" rel="stylesheet">
     <link href="./css/toolbox.css" rel="stylesheet">
     <script defer src="./js/loadhtml.js"></script>
+    <!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '966165011583364'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+     <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=966165011583364&ev=PageView
+    &noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
     
 </head>
     <!-- Google tag (gtag.js) -->
@@ -51,21 +70,24 @@
             </div>
         </div>
     </div>
-    <div id="mainframe" class="container">
+
+    <div id="mainframe" class="tcontainer">
         <div class="target row row-left" id="target-container">
             <div class="inner-toolbox">
+                <img src="./images/toolbox.png" width="250px">
                 <h2>Welcome to the toolbox.</h2>
-                <p class="description">Automation? Robots? Robots taking over the world? How about my employees?</p>
+                <p class="description">This is where you'll find tools for you to get started with automating your business.</p>
+                <p class="description">There is a lot of noise about automation and AI out there, and a lot of buzz words about AI and robots. The goal of this section is to help you navigate through the noise and extract basic concepts.</p>
                 <p class="description">
-                    Before you feel too overwhelmed, have some lemonade and let's lay down some basics.Here you can find resources to help you wrap your head around advanced technology- but specifically, around what it can do for you.
+                    Here at the problem company, we talk a lot about "creative automation" and discovering what type of technology you need for your own unique business goals. We organise webinars and workshops where we set out to equip you with tools for starting to grasp what automation might look like for creative companies dealing with physical processes. You can find these under the "Events" section.
                 </p>
-                <p class="description">We've got some events already up and running. However, this is a continuously growing collection; we are currently preparing all the basic materials for you.</p>
-                <p class="description">Check back in a little while or drop us your email and we'll find you (wink).</p>
-                <div id="mc_embed_shell" style="width: 100%; padding-top: 3%; display: flexbox; justify-content: center;">
+                <p class="description">The blog section is currently under construction- over there you will find bite-sized articles containing help on how to get started with automating complex processes and how to move into a high-tech era with your employees, in a human, kind and structured way.</p>
+                <p class="description">We have more tools under way, so check back in a little while or drop us your email and we'll find you (wink).</p>
+                <div id="mc_embed_shell" style="width: 100%; padding-top: 3%; display: flex; justify-content: center;">
                     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" />
                     <style>
                         #mc_embed_signup {
-                            background: #ffffff95;
+                            background: none;
                             clear: center;
                             font-size: 14px;
                             font-family: manropelight;
@@ -131,7 +153,7 @@
             </div>
         </div>
         <div class="sidebar dropdown row row-right" id="right-side-bar">
-            <a href="toolbox.html" class="sidebutton backbutton"><h3>Back</h3></a>
+            <a href="toolbox.html"><h4 class="backbutton">Back</h4></a>
             <button onclick="loadSnippet(1)" class="sidebutton eventsbutton"><h3>Events</h3></button>
             <button onclick="loadSnippet(2)" class="sidebutton blogbutton"><h3>Blog</h3></button>
         </div>

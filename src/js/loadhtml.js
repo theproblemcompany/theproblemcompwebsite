@@ -1,7 +1,7 @@
 const targetEl = document.querySelector('.target');
 
 const loadSnippet = number => {
-    fetch(`./snippets/html${number}.html`)
+    fetch(`html${number}.html`)
       .then(res => {
         if (res.ok) {
             return res.text();
