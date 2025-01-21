@@ -83,6 +83,41 @@
   transition: transform 0.2s;
 }
 
+.event-template{
+  width: 100%; 
+  height: 130px; 
+  border: 1px solid grey; 
+  border-radius: 15px;
+  margin-top: 3px; 
+  margin-bottom: 3px; 
+}
+
+.ev-inner{
+  padding-left: 30px; 
+  padding-top: 3px; 
+}
+
+.ev-title{
+  font-size: 20px;
+  font-family: manroperegular;
+}
+
+.event-template:hover{
+  transform: scale(1.02);
+}
+
+.ev-descr{
+  font-size: 16px; 
+  font-family: manropelight;
+  margin-top: -10px; 
+}
+
+.ev-tags{
+  font-size: 14px; 
+  font-family: manropelight
+}
+
+
 #events-lr {
   background-color: transparent;
 }
@@ -100,15 +135,15 @@
 }
 
 .event {
-  width: 300px;
-  height: 400px;
+  width: 800px;
+  height: 10;
   padding-top: 2%;
   padding-bottom: 1%;
   padding-left: 2%;
   padding-right: 2%;
   margin-right: 2%;
   margin-left: 2%;
-  border: 1px solid grey;
+  border: 1px solid rgb(255, 0, 0);
   border-radius: 10px;
   align-items: center;
 }
@@ -245,6 +280,29 @@
     margin-left: 10px;
     text-align: center;
   }
+
+  #eventscont {
+    padding-left: 1px;
+    padding-right: 1px;
+    width: 95%; 
+  }
+
+  .ev-title{
+    font-size: 14px;
+    font-family: manroperegular;
+  }
+  
+  .ev-descr{
+    font-size: 12px; 
+    font-family: manropelight;
+    margin-top: -10px; 
+  }
+  
+  .ev-tags{
+    font-size: 11px; 
+    font-family: manropelight
+  }
+
   .event {
     width: auto;
     height: 700px;

@@ -60,12 +60,20 @@ module.exports = {
             filename: "./toolbox.html"
         }),
         new HtmlWebPackPlugin({
+            template: "./src/events.html",
+            filename: "./events.html"
+        }),
+        new HtmlWebPackPlugin({
             template: "./src/scaleup.html",
             filename: "./scaleup.html"
         }),
         new HtmlWebPackPlugin({
             template: "./src/directiarobot.html",
             filename: "./directiarobot.html"
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/workshopautomatizare.html",
+            filename: "./workshopautomatizare.html"
         }),
         new HtmlWebPackPlugin({
             template: "./src/snippets/html1.html",
@@ -86,6 +94,10 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: "./src/snippets/dropdownsidebar.html",
             filename: "./dropdownsidebar.html"
+        }),
+        new HtmlWebPackPlugin({
+            template: "./src/snippets/sidebar.html",
+            filename: "./sidebar.html"
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",

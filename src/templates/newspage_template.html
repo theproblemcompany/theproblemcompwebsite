@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>news</title>
+<link href="./css/main.css" rel="stylesheet"/>
+<link href="./css/blogpost_style.css" rel="stylesheet"/>
+<link href="./favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7DYNZST7ST"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7DYNZST7ST');
+</script>
+<script src="./js/loadFilterBar.js"></script>
+<body onload="loadFilterBar()">
+<div class="menu" id="menu"></div>
+<div class="newspage-container">
+<div class="blog-filter">
+</div>
+<div class="blog-container">
+</div>
+<div class="footer container"></div></body>
+<script>
+
+  function showAll() {
+    document.querySelectorAll(".blog-thumbnail").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'inline'
+
+    })
+    
+  }
+
+  function showEvents() {
+    document.querySelectorAll(".blog-thumbnail").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'none'
+
+    })
+
+    document.querySelectorAll(".tag-events").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'inline'
+
+    })
+  }
+
+  function showMedia() {
+    document.querySelectorAll(".blog-thumbnail").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'none'
+
+    })
+
+    document.querySelectorAll(".tag-media").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'inline'
+
+    })
+  }
+
+  function showResearch() {
+    document.querySelectorAll(".blog-thumbnail").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'none'
+
+    })
+
+    document.querySelectorAll(".tag-research").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'inline'
+
+    })
+    
+  }
+
+  
+  function showProjects() {
+    document.querySelectorAll(".blog-thumbnail").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'none'
+
+    })
+
+    document.querySelectorAll(".tag-projects").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'inline'
+
+    })    
+  }
+
+</script>
+</html>

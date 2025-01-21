@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>news</title>
+<link href="./css/main.css" rel="stylesheet"/>
+<link href="./css/blogpost_style.css" rel="stylesheet"/>
+<link href="./favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7DYNZST7ST"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7DYNZST7ST');
+</script>
+<script src="./js/loadFilterBar.js"></script>
+<body onload="loadFilterBar()">
+<div class="menu" id="menu"></div>
+<div class="newspage-container">
+<div class="blog-filter">
+</div>
+<div class="blog-container">
+<div class="blog-thumbnail tag-events">
+<div class="blog-graphics">
+<img class="thumbnail" src="./blogposts/media/thebubblereturns.jpg"/>
+</div>
+<div class="blog-title">
+<a class="blog-link" href="/src/blogposts/events_.html"><h2 class="title-text">The Bubble returns for The Winter season</h2></a>
+</div>
+</div><div class="blog-thumbnail tag-research">
+<div class="blog-graphics">
+<img class="thumbnail" src="./blogposts/media/xrpapermedia.png"/>
+</div>
+<div class="blog-title">
+<a class="blog-link" href="/src/blogposts/research_June 2024.html"><h2 class="title-text">Research Paper Published</h2></a>
+</div>
+</div><div class="blog-thumbnail tag-media">
+<div class="blog-graphics">
+<img class="thumbnail" src="./blogposts/media/LVIBinterview.png"/>
+</div>
+<div class="blog-title">
+<a class="blog-link" href="/src/blogposts/media_August 2024.html"><h2 class="title-text">MSP Interview</h2></a>
+</div>
+</div><div class="blog-thumbnail tag-media">
+<div class="blog-graphics">
+<img class="thumbnail" src="./blogposts/media/msp_media.jpeg"/>
+</div>
+<div class="blog-title">
+<a class="blog-link" href="/src/blogposts/media_July 2024.html"><h2 class="title-text">We stopped by the MSP city office</h2></a>
+</div>
+</div><div class="blog-thumbnail tag-events">
+<div class="blog-graphics">
+<img class="thumbnail" src="./blogposts/media/commonhousepartnership.jpeg"/>
+</div>
+<div class="blog-title">
+<a class="blog-link" href="/src/blogposts/events_August 2024.html"><h2 class="title-text">The Problem Company x Common House</h2></a>
+</div>
+</div><div class="blog-thumbnail tag-media">
+<div class="blog-graphics">
+<img class="thumbnail" src="./blogposts/media/media1.png"/>
+</div>
+<div class="blog-title">
+<a class="blog-link" href="/src/blogposts/media_June 2024.html"><h2 class="title-text">Laservalley Innovation Bootcamp</h2></a>
+</div>
+</div><div class="blog-thumbnail tag-events">
+<div class="blog-graphics">
+<img class="thumbnail" src="./blogposts/media/creativeautomationworkshop.png"/>
+</div>
+<div class="blog-title">
+<a class="blog-link" href="/src/blogposts/events_June 2024.html"><h2 class="title-text">Creative Automation Workshop in Bucharest</h2></a>
+</div>
+</div><div class="blog-thumbnail tag-projects">
+<div class="blog-graphics">
+<img class="thumbnail" src="./blogposts/media/garmentdetection.jpg"/>
+</div>
+<div class="blog-title">
+<a class="blog-link" href="/src/blogposts/projects_April 2024.html"><h2 class="title-text">Tech for managing an online thrift store</h2></a>
+</div>
+</div><div class="blog-thumbnail tag-projects">
+<div class="blog-graphics">
+<img class="thumbnail" src="./blogposts/media/shoebooth.png"/>
+</div>
+<div class="blog-title">
+<a class="blog-link" href="/src/blogposts/projects_February 2024.html"><h2 class="title-text">CoBots in Shoe Cleaning</h2></a>
+</div>
+</div><div class="blog-thumbnail tag-research">
+<div class="blog-graphics">
+<img class="thumbnail" src="./blogposts/media/tfrpapermedia.png"/>
+</div>
+<div class="blog-title">
+<a class="blog-link" href="/src/blogposts/research_November 2023.html"><h2 class="title-text">Disrupting the fashion industry: A new research paper published</h2></a>
+</div>
+</div></div>
+<div class="footer container"></div></div></body>
+<script>
+
+  function showAll() {
+    document.querySelectorAll(".blog-thumbnail").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'inline'
+
+    })
+    
+  }
+
+  function showEvents() {
+    document.querySelectorAll(".blog-thumbnail").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'none'
+
+    })
+
+    document.querySelectorAll(".tag-events").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'inline'
+
+    })
+  }
+
+  function showMedia() {
+    document.querySelectorAll(".blog-thumbnail").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'none'
+
+    })
+
+    document.querySelectorAll(".tag-media").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'inline'
+
+    })
+  }
+
+  function showResearch() {
+    document.querySelectorAll(".blog-thumbnail").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'none'
+
+    })
+
+    document.querySelectorAll(".tag-research").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'inline'
+
+    })
+    
+  }
+
+  
+  function showProjects() {
+    document.querySelectorAll(".blog-thumbnail").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'none'
+
+    })
+
+    document.querySelectorAll(".tag-projects").forEach((item) => {
+      console.log('show all function is running')
+      item.style.display = 'inline'
+
+    })    
+  }
+
+</script>
+</html>

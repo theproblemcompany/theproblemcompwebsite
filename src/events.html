@@ -1,1 +1,152 @@
-<p>Mega paragraph, something, something</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolbox</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/toolbox.css" rel="stylesheet">
+    <script defer src="./js/loadhtml.js"></script>
+    <!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '966165011583364'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+     <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=966165011583364&ev=PageView
+    &noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    
+</head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DYNZST7ST"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-7DYNZST7ST');
+    </script>
+
+    <script>
+    function loadSnippet(t) {
+        console.log("Loadhtml.js: Function running");
+        const n = document.querySelector(".target");
+        //fetch(`./snippets/html${t}.html`)
+        fetch(`html${t}.html`)
+            .then((t) => {
+                if (t.ok) return t.text();
+            })
+            .then((t) => {
+                n.innerHTML = t;
+            }),
+            console.log("Loadhtml.js: Buttons active");
+    }
+    
+    </script>
+    <script src="./js/sidebar.js"></script>
+    
+
+
+<body class="body">
+    <div id="header">
+        <div id="menu">
+            <div id="title">
+                <a href="./index.html"><h1>the problem company.</h1></a>
+            </div>
+            <div id="tabs">
+                <a href="./toolbox.html"><h3 id="toolbox" class="menuitem">Toolbox</h3></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainframe" class="tcontainer">
+        <div class="target row row-left" id="target-container">
+            <div id='eventscont' class="">
+        
+                <p>Up next</p>
+                <a href="https://forms.gle/HZGU6pSzYdmsNTgA7"><div id="cc" class="event-template zoomin">
+                    <div class="ev-inner">
+                        <p class="ev-title">The Bubble Community Meet-Up</p>
+                        <p class="ev-descr">Safe space pentru comunitatea antreprenorilor creativi.</p>
+                        <p class="ev-tags"> In Person |📍 Bucharest | 🗣️ Romanian | 📆 21.08.2024 | 🕒 18:30PM (3h)</p>
+                    </div>
+        
+                </div></a>
+        
+                <div class="recurring" >
+                    <p>Recurring events</p>
+                    <a href="workshopautomatizare.html"><div id="caw" class="event-template zoomin">
+                        <div class="ev-inner">
+                            <p class="ev-title">Workshop de automatizare creativa</p>
+                            <p class="ev-descr">Afla ce poate face tehnologia avansata pentru afacerea ta.</p>
+                            <p class="ev-tags"> In Person |📍 Bucharest | 🗣️ Romanian |📆 Multiple Dates | 🕒 4h</p>
+                        </div>
+            
+                    </div></a>
+                    <a href="scaleup.html"><div id="caw" class="event-template zoomin">
+                        <div class="ev-inner">
+                            <p class="ev-title">Tehnologie avansata pentru optimizarea afacerii</p>
+                            <p class="ev-descr">Introducere in lumea "IA" aplicata direct problemelor tale.</p>
+                            <p class="ev-tags"> Online |📍 Google Meet | 🗣️ Romanian | 📆 Multiple Dates | 🕒 0.5h</p>
+                        </div>
+            
+                    </div></a>
+                    <a href="scaleup.html"><div id="caw" class="event-template zoomin">
+                        <div class="ev-inner">
+                            <p class="ev-title">Optimise your business with advanced technology</p>
+                            <p class="ev-descr">An introduction in the world of "AI", applied to your problems.</p>
+                            <p class="ev-tags"> Online |📍 Google Meet | 🗣️ English |📆 Multiple Dates | 🕒 0.5h</p>
+                        </div>
+            
+                    </div></a>
+                </div>
+        
+                <p>Past events</p>
+                <a href="directiarobot.html"><div id="caw" class="event-template zoomin">
+                    <div class="ev-inner">
+                        <p class="ev-title">Directia, Robot</p>
+                        <p class="ev-descr">Afla ce poate face tehnologia avansata pentru afacerea ta.</p>
+                        <p class="ev-tags"> In Person |📍 Bucharest | 🗣️ Romanian  📆 Multiple Dates | 🕒 3h</p>
+                    </div>
+        
+                </div></a>
+        
+            
+            </div>
+        </div>
+        
+        
+        <div class="sidebar dropdown row row-right" id="right-side-bar"></div>
+    </div>
+    <div class="footer container">
+        <div class="row frow" id="fA">
+            <a href="./index.html"><h5>Home</h5></a>
+            <a href="./toolbox.html"><h5>Toolbox</h5></a>
+            <a href="./privacy.html"><h5>Privacy</h5></a>
+        </div>
+        <div class="row frow" id="fB">
+            <h5>Contact us at</h5>
+            <a href="mailto:hello@theproblemcompany.co"><h5>hello@theproblemcompany.co</h5></a>
+            <h5>Bucharest, Romania</h5>
+        </div>
+        <div class="row frow" id="fC">        
+            <h5>Copyright</h5>
+            <h5>@the problem company 2024</h5>
+            <h5>All rights reserved</h5>
+        </div>
+    </div>
+    
+</body>
+</html>
