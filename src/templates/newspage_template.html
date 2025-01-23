@@ -5,9 +5,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>news</title>
-<link href="./css/main.css" rel="stylesheet"/>
-<link href="./css/blogpost_style.css" rel="stylesheet"/>
-<link href="./favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/src/css/main.css" rel="stylesheet"/>
+<link href="/src/css/blogpost_style.css" rel="stylesheet"/>
+<link href="/src/favicon.ico" rel="icon" type="image/x-icon"/>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7DYNZST7ST"></script>
@@ -18,7 +18,7 @@
 
   gtag('config', 'G-7DYNZST7ST');
 </script>
-<script src="./js/loadFilterBar.js"></script>
+<script src="/src/js/loadFilterBar.js"></script>
 <body onload="loadFilterBar()">
 <div class="menu" id="menu"></div>
 <div class="newspage-container">
@@ -97,4 +97,74 @@
   }
 
 </script>
+<script>
+  function loadFilterBar() {
+    const menu = document.querySelector(".menu")
+    const footer  = document.querySelector('.footer')
+    const filterbar = document.querySelector(".blog-filter")
+    
+    fetch(`./snippets/header.html`)
+    .then(res => {
+        if (res.ok) {
+            return res.text();
+        } else {
+            console.log('res not ok')
+        }
+    })
+  
+    .then(htmlSnippet => {
+        console.log(htmlSnippet)
+        menu.innerHTML = htmlSnippet;
+    });
+  
+    fetch('./snippets/footer.html')
+    .then(res => {
+        if (res.ok) {
+            return res.text();
+        } else {
+            console.log('res not ok')
+        }
+    })
+  
+    .then(htmlSnippet => {
+        console.log(htmlSnippet)
+        footer.innerHTML = htmlSnippet;
+    });
+
+    fetch(`./snippets/newsfilterbar.html`)
+    .then(res => {
+        if (res.ok) {
+            return res.text();
+        } else {
+            console.log('res not ok')
+        }
+    })
+  
+    .then(htmlSnippet => {
+        console.log(htmlSnippet)
+        filterbar.innerHTML = htmlSnippet;
+    });
+  };
+</script>
+<script>
+  function display() {
+         el = document.querySelector("#tabs");
+         ex = document.querySelector("#exitmenu");
+         el.style.visibility = "visible"; 
+         ex.style.visibility = "visible";
+         el.style.width = "100vw";
+         el.style.height = "100vh";
+         el.style.backgroundColor = '#F8F8FF'
+         console.log("clicked")
+         
+     }
+
+     function closemenu() {
+         men = document.querySelector("#tabs");
+         ex = document.querySelector("#exitmenu");
+         men.style.visibility = "hidden";
+         ex.style.visibility = "hidden";
+     }
+</script>
+
 </html>

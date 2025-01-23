@@ -1,5 +1,30 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
+const fs = require('fs');
+
+// Helper function to get all HTML files from a directory recursively
+const getHtmlFiles = (dir) => {
+    const files = fs.readdirSync(dir, { withFileTypes: true });
+    return files.flatMap(file => {
+        const fullPath = path.join(dir, file.name);
+        if (file.isDirectory()) {
+            return getHtmlFiles(fullPath); // Recursively get files from subdirectories
+        }
+        return file.name.endsWith('.html') ? [fullPath] : [];
+    });
+};
+
+// Directories to include
+const mainHtmlDir = 'src';
+const blogpostsDir = 'src/blogposts';
+
+// Get all HTML files from the directories
+const htmlFiles = [
+    ...getHtmlFiles(mainHtmlDir),
+    ...getHtmlFiles(blogpostsDir),
+];
 
 module.exports = {
     performance: {
@@ -8,7 +33,7 @@ module.exports = {
         maxAssetSize: 512000
     },
     mode: 'production',
-    entry: '/src/index.js',
+    entry: './src/index.js', // Corrected relative path
     module: {
         rules: [
             {
@@ -27,12 +52,10 @@ module.exports = {
                     }
                 ]
             },
-
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
-
             {
                 test: /\.scss$/,
                 use: [
@@ -41,67 +64,21 @@ module.exports = {
                     "sass-loader"
                 ]
             }
-
-        
         ]
-    }, 
-    
+    },
     plugins: [
-        new HtmlWebPackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/privacy.html",
-            filename: "./privacy.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/toolbox.html",
-            filename: "./toolbox.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/events.html",
-            filename: "./events.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/scaleup.html",
-            filename: "./scaleup.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/directiarobot.html",
-            filename: "./directiarobot.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/workshopautomatizare.html",
-            filename: "./workshopautomatizare.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/snippets/html1.html",
-            filename: "./html1.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/snippets/html2.html",
-            filename: "./html2.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/snippets/html3.html",
-            filename: "./html3.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/snippets/html4.html",
-            filename: "./html4.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/snippets/dropdownsidebar.html",
-            filename: "./dropdownsidebar.html"
-        }),
-        new HtmlWebPackPlugin({
-            template: "./src/snippets/sidebar.html",
-            filename: "./sidebar.html"
-        }),
+        // Generate HTML files dynamically
+        ...htmlFiles.map(file => new HtmlWebPackPlugin({
+            filename: path.relative('src', file), // Output relative to 'src' (ensure folder structure is maintained)
+            template: file, // Input HTML file
+        })),
+
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
-        })
+        }),
+
+        // Copy the `media` folder from blogposts
+  
     ]
-}
+};

@@ -35,7 +35,7 @@
 <div class="links">
 <a href="https://www.instagram.com/p/C-vDGb4IZWa/?hl=en&amp;img_index=1">Find our more about The Bubble</a></div>
 <div class="media-container">
-<img class="blog-media" src="./media/commonhousepartnership.jpeg"/></div>
+<img class="blog-media" src="../images/commonhousepartnership.jpeg"/></div>
 <p class="blogpost-text inner-text">September to December 2024 will be the first season of The Bubble, and it will feature monthly meet-up events and a series of masterclasses meant to help founders fix the most frequent issues we've heard in previous editions of our community meet-ups. You can find all the news, monthly announcements, as well as a calendar for the events we're organising related to The Bubble on our Instagram and Linkedin accounts, at @theproblem.company</p>
 </div>
 </div>
@@ -47,7 +47,7 @@
 <div class="related">
 <h2 class="relatedtitle title">Other stories</h2>
 <div class="relatedbox">
-<div class="featured-stories"><a href="/src/blogposts/events_.html">&gt; The Bubble returns for The Winter season</a></div><br/><div class="featured-stories"><a href="/src/blogposts/research_June 2024.html">&gt; Research Paper Published</a></div><br/><div class="featured-stories"><a href="/src/blogposts/media_July 2024.html">&gt; We stopped by the MSP city office</a></div><br/><div class="featured-stories"><a href="/src/blogposts/projects_February 2024.html">&gt; CoBots in Shoe Cleaning</a></div><br/><div class="featured-stories"><a href="/src/blogposts/research_November 2023.html">&gt; Disrupting the fashion industry: A new research paper published</a></div><br/></div>
+<div class="featured-stories"><a href="./events_.html">&gt; The Bubble returns for The Winter season</a></div><br/><div class="featured-stories"><a href="./research_June 2024.html">&gt; Research Paper Published</a></div><br/><div class="featured-stories"><a href="./media_August 2024.html">&gt; MSP Interview</a></div><br/><div class="featured-stories"><a href="./projects_April 2024.html">&gt; Tech for managing an online thrift store</a></div><br/><div class="featured-stories"><a href="./projects_February 2024.html">&gt; CoBots in Shoe Cleaning</a></div><br/></div>
 </div>
 <div class="newslettersignup">
 <h2 class="newsletterprompt title">Sign up to our newsletter
@@ -135,5 +135,25 @@ function loadHeaderFooter() {
   });
 
 };
+</script>
+<script>
+     function display() {
+            el = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            el.style.visibility = "visible"; 
+            ex.style.visibility = "visible";
+            el.style.width = "100vw";
+            el.style.height = "100vh";
+            el.style.backgroundColor = '#F8F8FF'
+            console.log("clicked")
+            
+        }
+
+        function closemenu() {
+            men = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            men.style.visibility = "hidden";
+            ex.style.visibility = "hidden";
+        }
 </script>
 </html>

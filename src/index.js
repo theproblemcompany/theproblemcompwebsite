@@ -1,3 +1,5 @@
 import './css/main.scss';
-import './js/sidebar.js';
-import './js/loadhtml.js';
+import './css/blogpost_style.scss'
+import './css/services.scss'
+import './js/loadHeaderFooter.js';
+import './js/loadFilterBar.js'

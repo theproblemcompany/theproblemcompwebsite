@@ -1,0 +1,471 @@
+#main-body {
+    width: 100vw; 
+    height: 100vh; 
+    text-align: center;
+}
+
+.placeholder {
+    margin: 0 auto; 
+    padding-top: 20vw !important; 
+    justify-content: center;
+}
+
+.wip {
+    position: relative;
+    padding-top: 1%; 
+    font-size: 20px !important;
+    width: 20vw; 
+    margin: 0 auto; 
+}
+
+#contact-body { 
+    background-image: url("topCoat2.png");
+    background-repeat: repeat;
+    background-size: 100%; 
+    width: 100vw; 
+    height: 100vh; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 !important; 
+    padding: 0 !important; 
+}
+
+.pretzel {
+    position: relative;
+    margin: 0 auto !important; 
+    width: 20vw; 
+    padding-top: 10vw !important; 
+}
+
+.social-media {
+    display: flexbox; 
+    flex-direction: row; 
+    width: 27vw; 
+    margin: 0 auto; 
+    padding-top: 3%; 
+    padding-bottom: 10%;
+}
+
+.social-icon { 
+    width: 60px; 
+    padding-left: 5%; 
+    padding-right: 5%;
+}
+
+.emailto:link{
+    text-decoration: underline;
+}
+
+.emailto:hover{
+    opacity: 70%; 
+}
+
+#about-body{
+    background-image: url("topCoat2.png");
+    background-repeat: repeat;
+    background-size: 10%; 
+    height: auto; 
+
+}
+
+#absection1{
+    position: relative;
+    height: 100vh; 
+    width: 60vw;
+    margin: 0 auto; 
+    text-align: center;
+}
+
+#absection2{
+    position: relative;
+    height: 50vh; 
+    width: 35vw; 
+    left: 0; 
+    top: 0; 
+    margin-left: 15vw; 
+    text-align: left; 
+}
+
+#absection3{
+    position: relative;
+    height: 70vh; 
+    width: 80vw; 
+    left: 0; 
+    top: 0; 
+    margin-left: 15vw; 
+    text-align: left; 
+   
+}
+
+.twocolumn{
+    display: flex; 
+    flex-direction: row;
+    width: 100%; 
+    height: 50vh; 
+    gap: 10%; 
+}
+
+#c2{
+    margin-top: 25vh;
+}
+
+.column{
+    width: 40%; 
+    height: 100%; 
+}
+
+.partext {
+    font-size: 18px; 
+    line-height: 28px;
+    background-color: #F8F8FF;
+
+}
+
+.underline{
+    color: #6494ed;
+    font-weight: bold;
+    //text-decoration: underline;
+    text-decoration-color: #6494ed;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: none; 
+}
+
+#absection4{
+    position: relative; 
+    width: 60vw; 
+    height: auto; 
+    margin: 0 auto; 
+    margin-top: 20vh !important; 
+}
+
+.abtitle2{
+    font-size: 22px;
+    background-color: #F8F8FF; 
+}
+
+.abtitle{
+    margin: 0 auto;
+    padding-top: 40vh; 
+}
+
+#tech{
+    line-height: 35px; 
+    background-color: #F8F8FF;
+}
+
+.bold{
+    font-weight: 200 !important;
+    font-family: manropesemibold;
+}
+
+#absection5{
+    margin: 0 auto; 
+    height: 120vh; 
+    width: 100vw; 
+    align-items: center;
+    text-align: center;
+}
+
+.vertical-arrow{
+    rotate: 90deg; 
+    width: 35vh;
+    height: 50px; 
+    margin-top: 17vh; 
+    height: auto; 
+    background-color: #F8F8FF;
+}
+
+.abtitle3{
+    margin-top: 18vh; 
+    font-size: 25px; 
+    text-transform: uppercase;
+}
+
+.teamdiv{
+    display: flex; 
+    flex-direction: row;
+    width: 70vw; 
+    height: 60vh; 
+    margin: 0 auto; 
+    position: relative;
+    gap: 20px;
+}
+
+.column1{
+    width: 70%; 
+    background-color: #F8F8FF;
+    border: solid 3px #ffca00; 
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.column2{
+    width: 30%; 
+    background-color: #6494ed;
+    border-radius: 20px;
+    position: relative;
+}
+
+
+.foundercard{
+    position: absolute; 
+    right: 0; 
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
+}
+
+#foundertitle{
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.imgholder{
+    width: 60%; 
+    height: 50%; 
+    margin: 0 auto; 
+    border-radius: 20px;
+    border: solid 3px #6494ed;
+    overflow: hidden;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.profileimg{
+    object-fit: cover;
+    width: 100%;
+}
+
+#teamdescr{
+    text-align: left;
+    font-size: 18px;
+    padding: 15%; 
+    border-radius: 20px; 
+    width: auto; 
+    height: 50%;
+}
+
+#foundername {
+    text-transform: uppercase;
+    font-size: 13px; 
+    font-weight: bold;
+}
+
+#foundersocials{
+    position: absolute;
+    align-items: center; 
+    bottom: 0; 
+    margin-bottom: 10px; 
+    width: 80%; 
+    margin-left: 10%; 
+    height: 35px; 
+}
+
+.fsoc{
+    height: inherit;
+    padding-left: 5%; 
+}
+
+#founderdescr{
+    height: 15%; 
+    overflow: hidden;
+    margin: 0 auto; 
+    width: 70%; 
+    margin-top: 10px; 
+    font-size: 15px;
+    text-align: center;
+}
+
+
+#section6{
+    position: relative; 
+    width: 100vw !important; 
+    margin: 0 auto;
+    height: 100vh; 
+    display: block; 
+}
+
+#hiring{ 
+    width: 100%; 
+    height: 400px; 
+    margin-top: 40vh;
+}
+
+.hiringbox{
+    border: solid 1px black; 
+    border-radius: 20px;
+    width: 70%; 
+    height: 200px; 
+    margin: 0 auto; 
+    background-color: #F8F8FF;
+    margin-bottom: 100px; 
+}
+
+.hiringtext{
+    font-size: 15px !important; 
+}
+
+.cta {
+    font-size: 15px !important;
+    z-index: 1 !important;
+}
+
+
+
+@media only screen and (max-width: 600px) { 
+    #absection1{
+        position: relative;
+        height: 100vh; 
+        width: 90vw;
+        margin: 0 auto; 
+        text-align: center !important;
+    }
+
+    #absection2, #absection3, #absection4, #absection5, #absection6{
+        position: relative;
+        width: 90vw;
+        margin: 0 auto; 
+        text-align: left;
+
+    }
+
+    #absection2{
+        margin: 0 auto; 
+        text-align: left !important;
+
+    }
+
+    #par1, #par2{
+        padding-left: 5% !important; 
+    }
+
+    #absection3{
+        height: auto !important; 
+        margin-bottom: 100px !important; 
+    }
+
+    #absection3{
+        height: 100vh !important;
+        margin-top: 15vh !important;
+    }
+
+    #absection4{
+        padding-top: 10vh !important;
+        padding-bottom: 10vh !important; 
+        text-align: center !important;
+    }
+
+    .twocolumn, .teamdiv{
+        display: flex; 
+        flex-direction: column;
+        width: 100%;  
+    }
+
+    .abtitle2{
+        padding-left: 5% !important; 
+        width: 90% !important; 
+    }
+
+    #absection5{
+        height: 150vh !important;
+        text-align: center;
+        width: 100vw !important; 
+        margin: 0 auto !important; 
+
+    }
+
+    .vertical-arrow{
+        display: none;
+    }
+
+    .teamdiv{
+        height: auto !important; 
+        margin: 0 !important; 
+    }
+
+    .column1{
+        height: 350px !important; 
+        position: relative; 
+    }
+    
+    .column2{
+        height: 600px !important; 
+    }
+
+    #teamdescr{
+        padding: 0 !important; 
+        margin: 0 auto!important; 
+        width: 80% !important; 
+        margin-left: 10% !important; 
+        padding-top: 5% !important; 
+        padding-bottom: 5% !important; 
+        font-size: 15px !important;
+    }
+
+    .column, .column1, .column2 {
+        width: 90%; 
+        margin: 0 !important; 
+        padding: 0 !important; 
+        margin-left: 5% !important;
+    }
+
+    .abtitle3{ 
+        margin: 0 !important; 
+    }
+
+    #jobstitle{
+        margin-top: 10vh !important; 
+        padding-bottom: 2vh !important; 
+    }
+
+    .hiringbox{
+        width: 90% !important; 
+        overflow: hidden;
+        height: 35vh !important; 
+    }
+
+    .hiringtext{
+        font-size: 15px !important;
+        text-align: left; 
+        padding-left: 5%; 
+        width: 90%; 
+    }
+
+    #founderdescr{
+        font-size: 18px !important; 
+    }
+
+    #section6{
+        height: 60vh !important; 
+        overflow: hidden !important;
+    }
+
+
+    .pretzel { 
+        padding-top: 30vh !important; 
+    }
+
+    .social-media {
+        display: flex !important; 
+        flex-direction: row !important;
+        padding-top: 5vh !important; 
+    }
+
+    .placeholder, .wip {
+        width: 90% !important; 
+        margin-left: 5% !important; 
+        background-color: #F8F8FF;
+    }
+
+    .placeholder {
+        margin-top: 30vh !important;
+    }
+
+}
+
+

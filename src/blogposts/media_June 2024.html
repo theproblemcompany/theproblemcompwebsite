@@ -35,7 +35,7 @@
 <div class="links">
 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7208802780633870336">Watch the full pitch here</a></div>
 <div class="media-container">
-<img class="blog-media" src="./media/media1.png"/></div>
+<img class="blog-media" src="../images/media1.png"/></div>
 <p class="blogpost-text inner-text">We spent three intensive days in the Magurele Science-Park organised Bootcamp, looking for answers and solutions to our most burning question: how can we make advanced technology accessible outside of big research centers? We've benefitted from long chats with mentors, and a lot of brainstorming later, we even came up with a concept and directions for where the company should deposit its efforts to next. </p>
 </div>
 </div>
@@ -47,7 +47,7 @@
 <div class="related">
 <h2 class="relatedtitle title">Other stories</h2>
 <div class="relatedbox">
-<div class="featured-stories"><a href="/src/blogposts/events_.html">&gt; The Bubble returns for The Winter season</a></div><br/><div class="featured-stories"><a href="/src/blogposts/research_June 2024.html">&gt; Research Paper Published</a></div><br/><div class="featured-stories"><a href="/src/blogposts/media_August 2024.html">&gt; MSP Interview</a></div><br/><div class="featured-stories"><a href="/src/blogposts/media_July 2024.html">&gt; We stopped by the MSP city office</a></div><br/><div class="featured-stories"><a href="/src/blogposts/research_November 2023.html">&gt; Disrupting the fashion industry: A new research paper published</a></div><br/></div>
+<div class="featured-stories"><a href="./research_June 2024.html">&gt; Research Paper Published</a></div><br/><div class="featured-stories"><a href="./events_August 2024.html">&gt; The Problem Company x Common House</a></div><br/><div class="featured-stories"><a href="./events_June 2024.html">&gt; Creative Automation Workshop in Bucharest</a></div><br/><div class="featured-stories"><a href="./projects_February 2024.html">&gt; CoBots in Shoe Cleaning</a></div><br/></div>
 </div>
 <div class="newslettersignup">
 <h2 class="newsletterprompt title">Sign up to our newsletter
@@ -135,5 +135,25 @@ function loadHeaderFooter() {
   });
 
 };
+</script>
+<script>
+     function display() {
+            el = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            el.style.visibility = "visible"; 
+            ex.style.visibility = "visible";
+            el.style.width = "100vw";
+            el.style.height = "100vh";
+            el.style.backgroundColor = '#F8F8FF'
+            console.log("clicked")
+            
+        }
+
+        function closemenu() {
+            men = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            men.style.visibility = "hidden";
+            ex.style.visibility = "hidden";
+        }
 </script>
 </html>

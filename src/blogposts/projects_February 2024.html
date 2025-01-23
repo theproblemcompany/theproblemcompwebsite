@@ -35,7 +35,7 @@
 <div class="links">
 </div>
 <div class="media-container">
-<img class="blog-media" src="./media/shoebooth.png"/></div>
+<img class="blog-media" src="../images/shoebooth.png"/></div>
 <p class="blogpost-text inner-text"></p>
 </div>
 </div>
@@ -47,7 +47,7 @@
 <div class="related">
 <h2 class="relatedtitle title">Other stories</h2>
 <div class="relatedbox">
-<div class="featured-stories"><a href="/src/blogposts/research_June 2024.html">&gt; Research Paper Published</a></div><br/><div class="featured-stories"><a href="/src/blogposts/events_August 2024.html">&gt; The Problem Company x Common House</a></div><br/><div class="featured-stories"><a href="/src/blogposts/media_June 2024.html">&gt; Laservalley Innovation Bootcamp</a></div><br/><div class="featured-stories"><a href="/src/blogposts/events_June 2024.html">&gt; Creative Automation Workshop in Bucharest</a></div><br/><div class="featured-stories"><a href="/src/blogposts/projects_April 2024.html">&gt; Tech for managing an online thrift store</a></div><br/></div>
+<div class="featured-stories"><a href="./events_.html">&gt; The Bubble returns for The Winter season</a></div><br/><div class="featured-stories"><a href="./research_June 2024.html">&gt; Research Paper Published</a></div><br/><div class="featured-stories"><a href="./media_August 2024.html">&gt; MSP Interview</a></div><br/><div class="featured-stories"><a href="./media_June 2024.html">&gt; Laservalley Innovation Bootcamp</a></div><br/><div class="featured-stories"><a href="./research_November 2023.html">&gt; Disrupting the fashion industry: A new research paper published</a></div><br/></div>
 </div>
 <div class="newslettersignup">
 <h2 class="newsletterprompt title">Sign up to our newsletter
@@ -135,5 +135,25 @@ function loadHeaderFooter() {
   });
 
 };
+</script>
+<script>
+     function display() {
+            el = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            el.style.visibility = "visible"; 
+            ex.style.visibility = "visible";
+            el.style.width = "100vw";
+            el.style.height = "100vh";
+            el.style.backgroundColor = '#F8F8FF'
+            console.log("clicked")
+            
+        }
+
+        function closemenu() {
+            men = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            men.style.visibility = "hidden";
+            ex.style.visibility = "hidden";
+        }
 </script>
 </html>

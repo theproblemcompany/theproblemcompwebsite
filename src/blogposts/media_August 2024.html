@@ -35,7 +35,7 @@
 <div class="links">
 <a href="https://www.youtube.com/watch?v=UvhLkdHl9s8">Watch full interview here</a></div>
 <div class="media-container">
-<img class="blog-media" src="./media/LVIBinterview.png"/></div>
+<img class="blog-media" src="../images/LVIBinterview.png"/></div>
 <p class="blogpost-text inner-text">Listen to the full interview following the link in the header (original audio: Romanian).</p>
 </div>
 </div>
@@ -47,7 +47,7 @@
 <div class="related">
 <h2 class="relatedtitle title">Other stories</h2>
 <div class="relatedbox">
-<div class="featured-stories"><a href="/src/blogposts/media_July 2024.html">&gt; We stopped by the MSP city office</a></div><br/><div class="featured-stories"><a href="/src/blogposts/media_June 2024.html">&gt; Laservalley Innovation Bootcamp</a></div><br/><div class="featured-stories"><a href="/src/blogposts/events_June 2024.html">&gt; Creative Automation Workshop in Bucharest</a></div><br/><div class="featured-stories"><a href="/src/blogposts/projects_April 2024.html">&gt; Tech for managing an online thrift store</a></div><br/><div class="featured-stories"><a href="/src/blogposts/projects_February 2024.html">&gt; CoBots in Shoe Cleaning</a></div><br/></div>
+<div class="featured-stories"><a href="./research_June 2024.html">&gt; Research Paper Published</a></div><br/><div class="featured-stories"><a href="./media_July 2024.html">&gt; We stopped by the MSP city office</a></div><br/><div class="featured-stories"><a href="./events_June 2024.html">&gt; Creative Automation Workshop in Bucharest</a></div><br/><div class="featured-stories"><a href="./projects_February 2024.html">&gt; CoBots in Shoe Cleaning</a></div><br/><div class="featured-stories"><a href="./research_November 2023.html">&gt; Disrupting the fashion industry: A new research paper published</a></div><br/></div>
 </div>
 <div class="newslettersignup">
 <h2 class="newsletterprompt title">Sign up to our newsletter
@@ -135,5 +135,25 @@ function loadHeaderFooter() {
   });
 
 };
+</script>
+<script>
+     function display() {
+            el = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            el.style.visibility = "visible"; 
+            ex.style.visibility = "visible";
+            el.style.width = "100vw";
+            el.style.height = "100vh";
+            el.style.backgroundColor = '#F8F8FF'
+            console.log("clicked")
+            
+        }
+
+        function closemenu() {
+            men = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            men.style.visibility = "hidden";
+            ex.style.visibility = "hidden";
+        }
 </script>
 </html>

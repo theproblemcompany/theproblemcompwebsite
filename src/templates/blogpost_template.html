@@ -97,8 +97,8 @@ function loadHeaderFooter() {
   const funfact = document.querySelector('.funfact')
 
   const options = ["The very first company tag line was an ironic frustration response to the overuse of the word AI with no real meaning behind it.", 
-                    "The company was registered in November 2023 and at first, we thought we'd do a lot of overblown robotics R&D for crafts people.", 
-                    "Our founder has a mixed background, from art and architecture to robotics, and comes from an academia background.", 
+                    "The company was registered in November 2023 and at first, we thought we'd be a hardware R&D company only.", 
+                    "Our founder has a mixed background, from art and architecture to robotics, and has spent a short while in academic research and teaching.", 
                     "The company is registered in Romania, even though our founder travelled and lived all over the world- because she wanted to make a change starting from here."
   ]
 
@@ -138,5 +138,25 @@ function loadHeaderFooter() {
   });
 
 };
+</script>
+<script>
+     function display() {
+            el = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            el.style.visibility = "visible"; 
+            ex.style.visibility = "visible";
+            el.style.width = "100vw";
+            el.style.height = "100vh";
+            el.style.backgroundColor = '#F8F8FF'
+            console.log("clicked")
+            
+        }
+
+        function closemenu() {
+            men = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            men.style.visibility = "hidden";
+            ex.style.visibility = "hidden";
+        }
 </script>
 </html>

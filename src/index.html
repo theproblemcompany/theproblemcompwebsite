@@ -37,6 +37,7 @@
 
   gtag('config', 'G-7DYNZST7ST');
 </script>
+<script src="index.js"></script>
 <script src="./js/loadHeaderFooter.js"></script>
 
 <body onload="loadHeaderFooter()">
@@ -84,7 +85,7 @@
     <div id="section5">
         <h2 id="sectiontitle">Who we are, behind the screen</h2>
         <p id="storytime">We're a small, driven team that that believes that together we can make a change in our challenging world. We focus on working with companies that make things- in small series, custom, beautiful, crafty objects; companies that refuse to "sell out", but want to create authentic products. And for that, we know there aren't many solutions to make the life of small and medium entrepreneurs easier. But advanced technology can help: if only it is applied with care and humanity, in non-invasive ways. Technology can ... </p>
-        <a href="./about.html"><p id="text5cta" class="linkfollower">Read more about us</p></a>
+        <a href="./about.html#tech"><p id="text5cta" class="linkfollower">Read more about us</p></a>
         
     </div>
 
@@ -117,10 +118,21 @@
             ex.style.visibility = "hidden";
         }
 
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
         function changeCard() {
             card = document.querySelector('.bodycard')
-            card.style.transform = "rotateY(180deg)"
+
+            if (!isMobile()) {
+            //place script you don't want to run on mobile here
+                card.style.transform = "rotateY(180deg)"
+            }
+            
         }
+
+        
     </script>
 
     <script>
@@ -235,9 +247,41 @@
         })
     
     </script>
-</body>
-<script src="index.js"></script>
+    <script>
+        function loadHeaderFooter() {
+            const menu = document.querySelector(".menu")
+            const footer  = document.querySelector('.footer')
+            fetch(`./snippets/header.html`)
+            .then(res => {
+                if (res.ok) {
+                    return res.text();
+                } else {
+                    console.log('res not ok')
+                }
+            })
 
+            .then(htmlSnippet => {
+                console.log(htmlSnippet)
+                menu.innerHTML = htmlSnippet;
+            });
+
+            fetch('./snippets/footer.html')
+            .then(res => {
+                if (res.ok) {
+                    return res.text();
+                } else {
+                    console.log('res not ok')
+                }
+            })
+
+            .then(htmlSnippet => {
+                console.log(htmlSnippet)
+                footer.innerHTML = htmlSnippet;
+            });
+            };
+    </script>
+   
+</body>
 </html>
 
 
