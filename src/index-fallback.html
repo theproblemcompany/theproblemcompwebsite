@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <title>the problem company | modular automation</title>
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="/src/css/blogpost_style.css" rel="stylesheet"/>
+    <meta name="description" content="The dedicated automation service for ambitious SMEs in the manufacturing and production industries." />
+    <!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '966165011583364'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+     <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=966165011583364&ev=PageView
+    &noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DYNZST7ST"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7DYNZST7ST');
+</script>
+<script src="index.js"></script>
+<script src="./js/loadHeaderFooter.js"></script>
+
+<body onload="loadHeaderFooter()">
+    <div id="cursor"></div>
+    <div id="cursor-border"></div>
+    <div id="bckg-img">
+        <video class="bkg" autoplay muted loop>
+            <source src="./images/opticalflow2.mp4" type="video/mp4" >
+        </video>
+    </div>
+    <div id="overlay">
+    </div>
+    
+    <div id="menu" class="menu"></div>
+    <div id="section1" class="container">
+        <h2 class="upfront cursor-responsive">Wouldn’t it be nice if someone else did the heavy lifting?</h2> 
+            
+    </div>
+    <div id="section2" class="container">
+        <h2 id="destitle" class="">Our job is to take your boring tasks away, so you can do more of the creative stuff.</h2>
+
+    </div>
+    <div id="section3" class="container">
+        <h2 id="s3txt" class="cursor-responsive">We are the dedicated automation service for ambitious businesses in the manufacturing and production industries.</h2>
+        <p id="s3txt2">Our goal is to make technology accessible for innovative SMEs dreaming up a better, healthier world. We're here to sort through your problems and to replace them with minimal, clean technology.</p>
+    </div>
+    <div id="section4" class="container">
+        <div class="feature-card" onmouseover="changeCard()">
+            <div class="bodycard"> 
+                <div class="topcard"></div>
+                <div class="bodycard-front">
+                        
+                    <p class="cardtitle"> Featured Service</p>
+                </div>
+                <div class="bodycard-back">
+                    <p class="servicetitle">Business Assessment & Analytics</p>
+                    <p class="servicedescr" style="font-weight: bold">A complete X-Ray into your business processes and company history.</p>
+                    <p class="servicedescr">This is our signature business and data analytics service. 
+                        We map all of your company's processes and operations with the goal of highlighting repetitive processes that can be automated or company infrastructure that needs to be updated. 
+                        We collect data on the ground, by witnessing your company's workspace and talking to you and your team. We use data analytics to extract trends and statistics from your company's historical data.
+                        </p>
+                </div>
+            </div>
+            <div class="cta">
+                <a href="./services.html"><p id="textcta" class="linkfollower">See all of our services </p></a>
+                <img src="./images/shape.png" id="arrow">
+                   
+            </div>
+        </div>
+    </div>
+    <div id="section5">
+        <h2 id="sectiontitle">Who we are, behind the screen</h2>
+        <p id="storytime">We're a small, driven team that that believes that together we can reshape our challenging world. We focus on working with companies that make things- small series, custom, crafty objects; business owners that want to create authentic, healthy, ethical products. And for that, we know there aren't many solutions to make the life of small and medium companies easier. Our goal is to make advanced technology accessible, easy to understand and to work with- and ultimately, to enable you to do more good.</p>
+        <a href="./about.html"><p id="text5cta" class="linkfollower">Read more about us</p></a>
+        
+    </div>
+
+    <div id="section6">
+        <h3 id="newstitle">Latest News</h3>
+        <p id="newssubtitle">Find out all the lastest things that happened in and around our company + the next events we're organising.</p>
+        <div id="newscarousel" class="carousel">
+            <div class="newscta">
+                <a href="./newspage.html" class="linkfollower"><p>All news ></p></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer container"></div>
+    <div id="stickybot">
+    </div>
+
+    <script>
+        function display() {
+            el = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            el.style.visibility = "visible"; 
+            ex.style.visibility = "visible";
+            el.style.width = "100vw";
+            el.style.height = "100vh";
+            el.style.backgroundColor = '#F8F8FF'
+            console.log("clicked")
+            
+        }
+
+        function closemenu() {
+            men = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            men.style.visibility = "hidden";
+            ex.style.visibility = "hidden";
+        }
+
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        function changeCard() {
+            card = document.querySelector('.bodycard')
+
+            if (!isMobile()) {
+            //place script you don't want to run on mobile here
+                card.style.transform = "rotateY(180deg)"
+            }
+            
+        }
+
+        
+    </script>
+
+    <script>
+        const cursor = document.querySelector("#cursor");
+        const cursorBorder = document.querySelector("#cursor-border");
+        const img = document.querySelector("#bckg-img")
+        const cursorPos = { x: 0, y: 0 };
+        const cursorBorderPos = { x: 0, y: 0 };
+
+        var scaling = 50
+        var vis = 0
+        var isMouseOver= false
+        var mouseOverclickable = false
+        const scrollMax = window.innerHeight * 1.2
+    
+        document.addEventListener("mousemove", (e) => {
+        cursorPos.x = e.clientX;
+        cursorPos.y = e.clientY;
+    
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        document.querySelectorAll(".linkfollower").forEach((item) => {
+            item.addEventListener("mouseover", (e) => {
+                console.log('hovering')
+
+                mouseOverclickable = true; 
+            })
+
+            item.addEventListener("mouseout", (e) => {
+                mouseOverclickable = false; 
+            })
+        })
+
+        document.querySelectorAll(".cursor-responsive").forEach((item) => {
+        item.addEventListener("mouseover", (e) => {
+            isMouseOver = true
+            cursorBorder.style.backgroundColor = "pink";
+            cursorBorder.style.mixBlendMode = "difference";
+        });
+
+        item.addEventListener("mouseout", (e) => {
+            cursorBorder.style.backgroundColor = "unset";
+            cursorBorder.style.mixBlendMode = "unset";
+            isMouseOver = false
+            cursorBorder.style.backgroundColor = "#073834"
+        });
+        });
+    
+        requestAnimationFrame(function loop() {
+
+        if (isMouseOver === false) {
+            if (vis === 0) {
+            img.style.visibility = "hidden"
+            cursorBorder.style.backgroundColor = "#073834"
+
+            } else {
+            cursorBorder.style.backgroundColor = "transparent"
+            img.style.visibility = "visible"
+            } 
+        } else {
+            img.style.visibility = "hidden"
+        }
+
+        if (mouseOverclickable === true) {
+            cursorBorder.style.backgroundColor = "transparent";
+            cursorBorder.style.setProperty("--size",100 + "px");
+        } 
+
+
+        const easting = 8;
+        cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
+        cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+        cursorBorder.style.setProperty("--size", scaling + "px")
+        img.style.clipPath = `circle(${scaling/2}px at ${cursorBorderPos.x}px ${cursorBorderPos.y}px)`
+        
+        cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+        requestAnimationFrame(loop);
+        });
+
+        window.addEventListener("scroll", (e) => {
+            
+            const scrollPosition = window.scrollY;
+            const transformMin = 200
+            const transformMax = 1100
+            console.log(scrollPosition)
+            console.log(transformMin)
+
+            if (scrollPosition <= scrollMax) {
+                scaling = 50 + (scrollPosition /1.5); 
+
+            } else {
+                if (scaling >= 50) {
+                    scaling = scaling - 15
+                }   
+
+            }
+        if (scrollPosition >= transformMin ) {
+                vis = 1
+        }
+
+        if (scrollPosition < transformMin) {
+                vis = 0
+        }
+
+        if (scrollPosition >= transformMax) {
+            vis = 0
+        }
+            
+        })
+    
+    </script>
+    <script>
+        function loadHeaderFooter() {
+            const menu = document.querySelector(".menu")
+            const footer  = document.querySelector('.footer')
+            fetch(`./snippets/header.html`)
+            .then(res => {
+                if (res.ok) {
+                    return res.text();
+                } else {
+                    console.log('res not ok')
+                }
+            })
+
+            .then(htmlSnippet => {
+                console.log(htmlSnippet)
+                menu.innerHTML = htmlSnippet;
+            });
+
+            fetch('./snippets/footer.html')
+            .then(res => {
+                if (res.ok) {
+                    return res.text();
+                } else {
+                    console.log('res not ok')
+                }
+            })
+
+            .then(htmlSnippet => {
+                console.log(htmlSnippet)
+                footer.innerHTML = htmlSnippet;
+            });
+            };
+    </script>
+
+    <script>
+        const newscontainer = document.querySelector(".carousel")
+        var count = 0
+        fetch('./newspage.html')
+            .then(res => {
+                if (res.ok) {
+                    return res.text();
+                } else {
+                    console.log('res not ok')
+                }
+            })
+
+            .then(htmlSnippet => {
+                console.log(htmlSnippet)
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = htmlSnippet;
+                const elements = tempDiv.querySelectorAll(".blog-thumbnail");
+
+                elements.forEach((el) => {
+                    if (count < 4) {
+                        el.style.zIndex = "1"; 
+                        el.style.marginTop = "10px"; 
+                        newscontainer.appendChild(el)
+                    
+                    }
+
+                    count = count + 1
+                    
+                })
+                console.log('fetching elements')
+                console.log(elements)
+                //newscontainer.innerHTML = elements;
+            });
+            
+
+    </script>
+   
+</body>
+</html>
+
+
+
+
+
+

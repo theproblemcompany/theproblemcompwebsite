@@ -16,6 +16,7 @@
     "dat.gui": "^0.7.7",
     "file-loader": "^6.2.0",
     "npm-git-install": "^0.3.0",
+    "papaparse": "^5.5.2",
     "portfinder-sync": "0.0.2",
     "raw-loader": "^4.0.2",
     "serve-favicon": "^2.5.0",

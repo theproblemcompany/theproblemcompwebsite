@@ -1,0 +1,3 @@
+Industries applied,Category,Problem ID,Problem text,Solution
+"furniture, footwear, fashion",ecommerce,website,Uploading products to our website takes a very long itme,We recommend using an automatic online uploader.
+"furniture, footwear, fashion, food, ",production,inventory,We often run out of inventory and this is causing delays.,"You could implement a digital inventory monitoring solution, that takes into consideration how much material is being used for each incoming project, and alerts you and your employees of what needs to be ordered before it reaches a critical level."

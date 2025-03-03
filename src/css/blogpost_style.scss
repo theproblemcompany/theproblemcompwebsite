@@ -56,15 +56,17 @@ body {
 }
 
 .media-container {
-    height: 50vh; 
+    height: 60vh; 
     width: 95%;  
     margin-left: 2.5%; 
     overflow: hidden;
+    display: flex;
+    justify-content: center;
     
 }
 
 .blog-media {
-    object-fit: fill;
+    object-fit: cover;
     width: 100%;
     height: auto; 
 
@@ -274,7 +276,8 @@ body {
 
 .thumbnail {
     object-fit: cover;
-    width: 100%;
+    //width: 100%;
+    height: 100%; 
  
 }
 

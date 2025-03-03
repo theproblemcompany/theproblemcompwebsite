@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <title>quiz</title>
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/newindex.css" rel="stylesheet">
+    <link href="/src/css/blogpost_style.css" rel="stylesheet"/>
+    <meta name="description" content="The dedicated automation service for ambitious SMEs in the manufacturing and production industries." />
+    <!-- Facebook Pixel Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mandali&display=swap" rel="stylesheet">
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '966165011583364'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+     <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=966165011583364&ev=PageView
+    &noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DYNZST7ST"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7DYNZST7ST');
+</script>
+<script src="index.js"></script>
+<script src="./js/loadHeaderFooter.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "Atfe1rK2Dzvq4rnf6",
+      });
+   })();
+</script>
+
+<body onload="loadHeaderFooter()">
+    <div id="menu" class="menu"></div>
+    <div id="quiz-body">
+        <div id="quiz-header" class="body-format">
+            <p id="quiz-prompt">Find out what you can automate in 3 minutes.</p>
+        </div>
+        <div id="industry" class="body-format">
+            
+            <p>Select your industry to get started.</p>
+            <div>
+                <select id="industry-input" class="dropdown-input">
+                    <option class="value" value=""></option>
+                    <option class="value" value="fashion">Fashion & Textiles</option>
+                    <option class="value" value="furniture">Furniture & Wood-Working</option>
+                    <option class="option" value="footwear">Footwear</option>
+                    <option class="option" value="jewelry">Jewelry & Accessories</option>
+                    <option class="option" value="food">Food & Beverage</option>
+                    <option class="option" value="other">Other</option>
+                </select>
+            </div>
+            <p id="quiz-prompt">How would you best describe your activity? Select all that apply.</p>
+            <div class="selector-container">
+                <div class="selector-inner">
+                    <div class="selector-item category-item" onclick="mark_selected('design')" id="design">
+                        <p class="tick-text" >Design</p>
+                    </div>
+                    <div class="selector-item category-item" onclick="mark_selected('production')" id="production">
+                        <p class="tick-text">Production</p>
+                    </div>
+                    <div class="selector-item category-item" onclick="mark_selected('ecommerce')" id="ecommerce">
+                        <p class="tick-text">E-Commerce</p>
+                    </div>
+                    <div class="selector-item last-item" onclick="mark_selected('b2b')" id="b2b">
+                        <p class="tick-text">B2B</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="slider-container">
+                <div class="slider-prompt">
+                    <p class="tick-text">Scale from mass produced to very unique items (1- replicable, 5- very custom)
+                    </p></div>
+                <div class="slider-inner">
+                    <div class="sliderBar"></div>
+                    <div class="sliderHandle"></div>
+                </div>
+                <div class="sliderValue"></div>
+            </div>
+        </div>
+       
+        <div id="problem-tick-container">
+            <div id="tick-inner">
+                <div class="tick-problem">
+                    <p class="tick-text">Ran out of raw materials during a project (and it caused delays).</p>
+
+                </div>
+                <div class="tick-problem">
+                    <p class="tick-text">Lost a piece during production- it was fabricated and then we couldn't find it anywhere on the factory floor. </p>
+                    
+                </div>
+                <div class="tick-problem">
+                    <p class="tick-text">Production drawings were wrong and we had to redo the piece.</p>
+                    
+                </div>
+                <div class="tick-problem">
+                    <p class="tick-text">Project schedule was updated but we forgot to communicate it to the client.</p>
+                    
+                </div>
+                <div class="tick-problem">
+                    
+                </div>
+                <div class="tick-problem">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="basic-info">
+            <div id="basic-name">
+                <p>Input your name</p>
+                <input type="text" id="user-name" name="fname" class="user-input">
+            </div>
+            <div id="basic-email">
+                <p>Input your email</p>
+                <input type="text" id="user-email" name="femail" class="user-input">
+            </div>
+        </div>
+        <div id="submit-area">
+            <div class="cta-button" onclick="get_values()">Calculate your results</div>
+            <div id="error-message">
+
+            </div>
+        </div>
+       
+        
+        
+    </div>
+    <div id="response-body" style="display:none">
+        <div id="response-header">
+            <p>Here's your self-assessment results. We've sent them via email as well.</p>
+        </div>
+        <div id="response-div">
+
+        </div>
+        <div id="final-section">
+            <div class="cta-container">
+                <a href="https://calendly.com/theproblemcomp/introcall?month=2025-03">
+                    <div class="cta-button">
+                        <p class="inner-text-regular paragraph all-text cta-text">Book a call</p>
+                    </div>
+    
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div id="mailchimp-form">
+            <div id="mc_embed_shell">
+                <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+            <style type="text/css">
+                #mc_embed_signup{background:#fff;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
+                /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        </style>
+        <div id="mc_embed_signup">
+            <form action="https://theproblemcompany.us22.list-manage.com/subscribe/post?u=fc1b560099b653309f173f7e5&amp;id=17f901790d&amp;f_id=0034cae1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                <div id="mc_embed_signup_scroll">
+                    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                    <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div><div class="mc-field-group"><label for="mce-FNAME">First Name </label><input type="text" name="FNAME" class=" text" id="mce-FNAME" value=""></div><div class="mc-field-group"><label for="mce-LNAME">Last Name </label><input type="text" name="LNAME" class=" text" id="mce-LNAME" value=""></div><div class="mc-field-group"><label for="mce-MMERGE6">Company Name </label><input type="text" name="MMERGE6" class=" text" id="mce-MMERGE6" value=""></div><div class="mc-field-group"><label for="mce-MMERGE7">Company Size </label><select name="MMERGE7" class="" id="mce-MMERGE7"><option value=""></option><option value="1-10">1-10</option><option value="10-30">10-30</option><option value="30-50">30-50</option><option value="50-100">50-100</option><option value="< 100">&lt; 100</option></select></div><div class="mc-field-group"><label for="mce-MMERGE8">Industry </label><select name="MMERGE8" class="" id="mce-MMERGE8"><option value=""></option><option value="Footwear">Footwear</option><option value="Furniture &amp; Home Goods">Furniture &amp; Home Goods</option><option value="Textile &amp; Fashion">Textile &amp; Fashion</option><option value="Jewelry &amp; Accessories">Jewelry &amp; Accessories</option><option value="Food &amp; Beverage Production">Food &amp; Beverage Production</option><option value="Ceramics">Ceramics</option><option value="Handbags">Handbags</option><option value="Other">Other</option></select></div>
+                <div id="mce-responses" class="clear foot">
+                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                </div>
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                <input type="text" name="b_fc1b560099b653309f173f7e5_17f901790d" tabindex="-1" value="">
+            </div>
+                <div class="optionalParent">
+                    <div class="clear foot">
+                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                        <p style="margin: 0px auto;"><a href="http://eepurl.com/iPNitU" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='dropdown';fnames[8]='MMERGE8';ftypes[8]='dropdown';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+        
+    </div>
+    <div id="section6">
+        <h3 id="newstitle">Latest News</h3>
+        <p id="newssubtitle">Find out all the lastest things that happened in and around our company + the next events we're organising.</p>
+        <div id="newscarousel" class="carousel">
+            <div class="newscta">
+                <a href="./newspage.html" class="linkfollower"><p>All news ></p></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer container"></div>
+    <div id="stickybot">
+    </div>
+    <script>
+            const sliderHandle = document.querySelector(".sliderHandle");
+            const sliderContainer = document.querySelector(".sliderBar");
+            const sliderValueDisplay = document.querySelector(".sliderValue");
+
+            const steps = 5; // Number of steps (1 to 5)
+            const min = 1, max = 5;
+
+            // Calculate step width
+            const stepWidth = sliderContainer.clientWidth / (steps - 1);
+
+            // Initial position
+            let currentValue = 0;
+            updateSliderPosition(1);
+
+            sliderHandle.addEventListener("mousedown", function(event) {
+            event.preventDefault();
+
+            function onMouseMove(event) {
+                const rect = sliderContainer.getBoundingClientRect();
+                let offsetX = event.clientX - rect.left;
+                
+                // Snap to closest step
+                let newValue = Math.round(offsetX / stepWidth) + min;
+                newValue = Math.max(min, Math.min(max, newValue)); // Keep within bounds
+
+                if (newValue !== currentValue) {
+                currentValue = newValue;
+                updateSliderPosition(currentValue);
+                }
+
+                return currentValue;
+            }
+
+            function onMouseUp() {
+                document.removeEventListener("mousemove", onMouseMove);
+                document.removeEventListener("mouseup", onMouseUp);
+            }
+
+            document.addEventListener("mousemove", onMouseMove);
+            document.addEventListener("mouseup", onMouseUp);
+            });
+
+            function updateSliderPosition(value) {
+            sliderHandle.style.left = `${(value - min) * stepWidth}px`;
+            sliderValueDisplay.textContent = value;
+            }
+
+    </script>
+    <script>
+                var csv_values = []
+
+                function fetch_csv(){
+                    fetch('./quiz_response.csv').then(response => response.text()).then(text => {
+                    //console.log(text)
+                    const result = Papa.parse(text, { header: true }); // Parse CSV with headers
+                    csv_values = result.data; // Array of objects
+                    
+                    return csv_values
+                    })
+
+                    
+                }
+
+                function edit_response() {
+                    fetch('./quiz_response.csv').then(response => response.text()).then(text => {
+                    //console.log(text)
+                    const result = Papa.parse(text, { header: true }); // Parse CSV with headers
+                    const data = result.data; // Array of objects
+                    const targetColumn = "Solution"; // Change to your desired header
+                    if (!data[0] || !data[0][targetColumn]) {
+                        console.error(`Header "${targetColumn}" not found.`);
+                        return;
+                    }
+
+                    const container = document.querySelector('#response-div');
+                    container.innerHTML = ''; // Clear previous content
+
+                    data.forEach(row => {
+                        const cellValue = row[targetColumn]?.trim(); // Get value from column
+                        if (cellValue) {
+                        const div = document.createElement('div');
+                        div.classList.add('csv-row');
+
+                        const p = document.createElement('p');
+                        p.textContent = cellValue; // Set div text to row text
+
+                        div.appendChild(p);
+                        container.appendChild(div);
+                        }
+                    });
+                    })
+                    .catch(error => console.error('Error fetching CSV:', error));
+                }
+    </script>
+
+    <script>
+
+        
+        
+
+        selected_items = [];
+
+
+        function mark_selected(name){
+            item = document.querySelector('#'+name)
+            if (selected_items.includes(name)) {
+               
+                    item.classList.remove('selected');
+                    const index = selected_items.indexOf(name);
+                    selected_items.splice(index, 1);
+                    console.log(selected_items);
+                        
+
+            } else {
+                    item.classList.add('selected');
+                    console.log('clicked and selected');
+                    selected_items.push(name);
+                    console.log(selected_items);
+            }
+
+            get_problems()
+     
+                return selected_items
+
+            
+
+         
+
+        }
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+            }
+
+        function sendEmail(name, email, industry, selected_items, custom_value, error_div) {
+            
+            //let userEmail = document.getElementById("userEmail").value;
+            let userEmail = email
+
+            if (!userEmail) {
+                alert("Please enter your email!");
+                return;
+            }
+
+            let params = {
+                to_email: userEmail,
+                message: `hello ${name}, your industry is ${industry} and your selected items are ${selected_items}, your custom value is ${custom_value}`
+            };
+
+            emailjs.send("service_b2qvdil","template_hemvkcl",params).then(error_div.textContent = "Email sent successfully!").catch(error => alert("Error sending email: " + error));
+                
+        }
+
+        function get_response(industry, type_array){
+            get_problems_div = document.querySelector("#tick-inner")
+            get_problems_div.innerHTML = ''; 
+            
+            fetch('./quiz_response.csv').then(response => response.text()).then(text => {
+                    //console.log(text)
+                    const result = Papa.parse(text, { header: true }); // Parse CSV with headers
+                    data = result.data; // Array of objects
+                    var csv_industry_index = 'Industries applied'; // Change to your desired header
+                    
+                    var csv_problem_index = 'Category';
+                    var csv_problem_text = 'Problem text';
+                    if (!data[0] || !data[0][csv_industry_index]) {
+                        console.error(`Header "${csv_industry_index}" not found.`);
+                        return;
+                    }
+
+                    console.log(data)
+                    // check industries + category -> make array of all problems within these two circles
+
+                    let problems_industry = []
+                    let problems_category = []
+                    
+    
+                    data.forEach(row => {
+                        csv_industry_row = row[csv_industry_index]
+                        csv_problem_row = row[csv_problem_index]
+                        const categoryArray = csv_problem_row.split(", ").map(str => str.trim());
+                        const industryArray = csv_industry_row.split(", ").map(str => str.trim());
+                        csv_problem_input = row[csv_problem_text]
+                        console.log(type_array)
+                        console.log(categoryArray)
+                        console.log(industryArray)
+
+                        industry_array = industry.split(", ").map(str => str.trim());
+                        industry_found = industry_array.some(item => industryArray.includes(item));
+                        console.log(industry_found)
+
+                        const hasMatch = categoryArray.some(item => type_array.includes(item));
+
+                        if (industry_found && hasMatch) {
+                            console.log('industry found executing script')
+                            const cellValue = csv_problem_input?.trim(); // Get value from column
+                            console.log(cellValue)
+                            if (cellValue) {
+                                const div = document.createElement('div');
+                                div.classList.add('tick-problem');
+
+                                const p = document.createElement('p');
+                                p.classList.add('tick-text');
+                                p.textContent = cellValue; // Set div text to row text
+
+                                div.appendChild(p);
+                                get_problems_div.appendChild(div);
+                                }
+                        }
+
+                                
+                            
+                    });
+                
+            })
+            
+            
+
+        }
+
+        function get_problems(){
+            const input_answer = document.querySelector("#industry-input");
+            var industry = input_answer.options[input_answer.selectedIndex].value;
+            get_response(industry, selected_items)
+        }
+
+        function get_values(){
+            
+
+            //first get- industry, and type of work
+            const input_answer = document.querySelector("#industry-input");
+            const user_name = document.querySelector("#user-name");
+            const user_email = document.querySelector("#user-email");
+            const custom_value = currentValue; 
+            const error_div = document.querySelector("#error-message")
+            
+            var industry = input_answer.options[input_answer.selectedIndex].value;
+            var name = user_name.value;
+            var email = user_email.value;
+
+            try {
+                if (!name) throw new Error("Name field cannot be empty.");
+                if (!email) throw new Error("Email field cannot be empty.");
+                if (input_answer.length == 1) throw new Error("Industry field cannot be empty.");
+                if (custom_value == 0) throw new Error("Custom scale field cannot be empty.");
+                if (!validateEmail(email)) throw new Error("Invalid email format.");
+
+                // Clear error message if everything is fine
+                error_div.textContent = "";
+                
+                error_div.textContent = "Form submitted successfully!";
+                //sendEmail(name, email, industry, selected_items, custom_value, error_div);
+
+                const quiz_body = document.querySelector("#quiz-body")
+                quiz_body.style.display="none"
+                const response_body = document.querySelector("#response-body")
+                response_body.style.display= "flex"
+
+            } catch (error) {
+                error_div.textContent = error.message;
+            }
+
+            
+            const values = [industry, name]
+            return values
+        }
+
+
+         
+    </script>
+
+    <script>
+        function get_company_category(){
+            category_selector = document.querySelector(".category-item")
+        }
+    </script>
+
+    <script>
+        function display() {
+            el = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            el.style.visibility = "visible"; 
+            ex.style.visibility = "visible";
+            el.style.width = "100vw";
+            el.style.height = "100vh";
+            el.style.backgroundColor = '#F8F8FF'
+            console.log("clicked")
+            
+        }
+
+        function closemenu() {
+            men = document.querySelector("#tabs");
+            ex = document.querySelector("#exitmenu");
+            men.style.visibility = "hidden";
+            ex.style.visibility = "hidden";
+        }
+
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        function changeCard() {
+            card = document.querySelector('.bodycard')
+
+            if (!isMobile()) {
+            //place script you don't want to run on mobile here
+                card.style.transform = "rotateY(180deg)"
+            }
+            
+        }
+
+        
+    </script>
+    <script>
+        function loadHeaderFooter() {
+            const menu = document.querySelector(".menu")
+            const footer  = document.querySelector('.footer')
+            fetch(`./snippets/header.html`)
+            .then(res => {
+                if (res.ok) {
+                    return res.text();
+                } else {
+                    console.log('res not ok')
+                }
+            })
+
+            .then(htmlSnippet => {
+                console.log(htmlSnippet)
+                menu.innerHTML = htmlSnippet;
+            });
+
+            fetch('./snippets/footer.html')
+            .then(res => {
+                if (res.ok) {
+                    return res.text();
+                } else {
+                    console.log('res not ok')
+                }
+            })
+
+            .then(htmlSnippet => {
+                console.log(htmlSnippet)
+                footer.innerHTML = htmlSnippet;
+            });
+            };
+    </script>
+
+    <script>
+        const newscontainer = document.querySelector(".carousel")
+        var count = 0
+        fetch('./newspage.html')
+            .then(res => {
+                if (res.ok) {
+                    return res.text();
+                } else {
+                    console.log('res not ok')
+                }
+            })
+
+            .then(htmlSnippet => {
+                console.log(htmlSnippet)
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = htmlSnippet;
+                const elements = tempDiv.querySelectorAll(".blog-thumbnail");
+
+                elements.forEach((el) => {
+                    if (count < 4) {
+                        el.style.zIndex = "1"; 
+                        el.style.marginTop = "10px"; 
+                        newscontainer.appendChild(el)
+                    
+                    }
+
+                    count = count + 1
+                    
+                })
+                console.log('fetching elements')
+                console.log(elements)
+                //newscontainer.innerHTML = elements;
+            });
+            
+
+    </script>
+   
+</body>
+</html>
+
+
+
+
+
+
