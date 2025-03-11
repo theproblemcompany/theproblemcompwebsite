@@ -1,1 +1,0 @@
-const targetEl=document.querySelector(".target"),loadSnippet=t=>{fetch(`./snippets/html${t}.html`).then((t=>{if(t.ok)return t.text()})).then((t=>{targetEl.innerHTML=t}))};
