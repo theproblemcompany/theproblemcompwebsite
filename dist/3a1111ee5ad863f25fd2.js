@@ -1,1 +1,0 @@
-function check_if_mobile(e,i){window.matchMedia("(max-width: 600px)").matches?fetch(i).then((e=>{if(e.ok)return e.text()})).then((i=>{e.innerHTML=i})):console.log("Sidebar.js: This is a Desktop device.")}window.onload=function(){const e=document.querySelector(".sidebar");htmlSnippetmobile="./snippets/dropdownsidebar.html",check_if_mobile(e,htmlSnippetmobile)};

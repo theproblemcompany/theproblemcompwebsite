@@ -47,6 +47,7 @@
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 <script type="text/javascript">
    (function(){
@@ -60,23 +61,23 @@
     <div id="menu" class="menu"></div>
     <div id="quiz-body">
         <div id="quiz-header" class="body-format">
-            <p id="quiz-prompt">Find out what you can automate in 3 minutes.</p>
+            <p id="quiz-prompt" class="inner-text-regular paragraph subheading">Find out what you can automate in 3 minutes.</p>
         </div>
         <div id="industry" class="body-format">
             
-            <p>Select your industry to get started.</p>
+            <p class="semibold main-headline">Select your industry to get started.</p>
             <div>
                 <select id="industry-input" class="dropdown-input">
-                    <option class="value" value=""></option>
-                    <option class="value" value="fashion">Fashion & Textiles</option>
-                    <option class="value" value="furniture">Furniture & Wood-Working</option>
+                    <option class="option" value=""></option>
+                    <option class="option" value="fashion">Fashion & Textiles</option>
+                    <option class="option" value="furniture">Furniture & Wood-Working</option>
                     <option class="option" value="footwear">Footwear</option>
                     <option class="option" value="jewelry">Jewelry & Accessories</option>
                     <option class="option" value="food">Food & Beverage</option>
                     <option class="option" value="other">Other</option>
                 </select>
             </div>
-            <p id="quiz-prompt">How would you best describe your activity? Select all that apply.</p>
+            <p id="selector-header" class="quiz-text">Which of the following best describe your activity? Select all that apply.</p>
             <div class="selector-container">
                 <div class="selector-inner">
                     <div class="selector-item category-item" onclick="mark_selected('design')" id="design">
@@ -88,61 +89,71 @@
                     <div class="selector-item category-item" onclick="mark_selected('ecommerce')" id="ecommerce">
                         <p class="tick-text">E-Commerce</p>
                     </div>
-                    <div class="selector-item last-item" onclick="mark_selected('b2b')" id="b2b">
-                        <p class="tick-text">B2B</p>
+                    <div class="selector-item last-item" onclick="mark_selected('prototyping')" id="prototyping">
+                        <p class="tick-text">Prototyping</p>
                     </div>
                 </div>
                 
             </div>
-            <div class="slider-container">
+            <div class="slider-container" style="display: none">
                 <div class="slider-prompt">
-                    <p class="tick-text">Scale from mass produced to very unique items (1- replicable, 5- very custom)
+                    <p class="quiz-text">How would you describe the products you manufacture?
                     </p></div>
                 <div class="slider-inner">
                     <div class="sliderBar"></div>
-                    <div class="sliderHandle"></div>
+                    <div class="sliderHandle">
+                        <div class="sliderValue"></div>
+                    </div>
                 </div>
-                <div class="sliderValue"></div>
+                <div class="slider-values">
+                    <p class="quiz-text val-row">1: mass produced
+                    </p>
+                    <p class="quiz-text val-row r-left">5: very customized
+                    </p>
+
+                </div>
+                
             </div>
         </div>
        
-        <div id="problem-tick-container">
-            <div id="tick-inner">
-                <div class="tick-problem">
-                    <p class="tick-text">Ran out of raw materials during a project (and it caused delays).</p>
-
-                </div>
-                <div class="tick-problem">
-                    <p class="tick-text">Lost a piece during production- it was fabricated and then we couldn't find it anywhere on the factory floor. </p>
-                    
-                </div>
-                <div class="tick-problem">
-                    <p class="tick-text">Production drawings were wrong and we had to redo the piece.</p>
-                    
-                </div>
-                <div class="tick-problem">
-                    <p class="tick-text">Project schedule was updated but we forgot to communicate it to the client.</p>
-                    
-                </div>
-                <div class="tick-problem">
-                    
-                </div>
-                <div class="tick-problem">
-                    
-                </div>
+        <div id="problem-tick-container" class="tick-row">
+            <p class="semibold main-headline">Now the fun part. </p>
+            <p class="quiz-text">Select all the problems you relate to.</p>
+            <div class="ecomm-title head-title">E-commerce</div>
+            <div class="tick-inner tick-ecomm">
+                
+            </div>
+            <div class="prod-title head-title">Production</div>
+            <div class="tick-inner tick-prod">
+                
+            </div>
+            <div class="design-title head-title">Design</div>
+            <div class="tick-inner tick-design">
+                
+            </div>
+            <div class="prototyping-title head-title">Prototyping</div>
+            <div class="tick-inner tick-prototyping">
+                
             </div>
         </div>
         <div id="basic-info">
             <div id="basic-name">
-                <p>Input your name</p>
+                <p class="quiz-text">Your name</p>
                 <input type="text" id="user-name" name="fname" class="user-input">
             </div>
             <div id="basic-email">
-                <p>Input your email</p>
+                <p class="quiz-text">Your email</p>
                 <input type="text" id="user-email" name="femail" class="user-input">
             </div>
+            <div id="gdpr">
+                <div class="quiz-text" id="process-title">Data Processing Consent</div>
+                <input type="checkbox" id="quiz-store" name="quiz-store" value="quiz-data-store">
+                <label for="quiz-store"> I agree to have my quiz results stored annonymously.</label><br>
+                <input type="checkbox" id="email-marketing" name="email-marketing" value="marketing-consent">
+                <label for="email-marketing">I agree to receive follow-up emails based on my quiz responses.</label><br>
+            </div>
         </div>
-        <div id="submit-area">
+        <div id="submit-area" style="display: none">
             <div class="cta-button" onclick="get_values()">Calculate your results</div>
             <div id="error-message">
 
@@ -152,14 +163,89 @@
         
         
     </div>
-    <div id="response-body" style="display:none">
+    <div id="response-body" style="display: none;">
         <div id="response-header">
-            <p>Here's your self-assessment results. We've sent them via email as well.</p>
+            <p class="semibold main-headline">Tips to efficientize your process</p>
+            <p class="inner-text-regular paragraph subheading">We've sent them via email as well.</p>
         </div>
         <div id="response-div">
+            <div id="overview-header" class="area-container">
+                <div class="overview-text">Here's a quick overview. Your most pressing problems are:</div>
+                <div id="summary">
+                    <div id="summary-cat">
+                        <div class="cat-item">e-commerce
+                        </div>
+                        <div class="cat-item">production</div>
+                        <div class="cat-item">inventory</div>
+                    </div>
+                    <div id="summary-short">
+                        <div class="short-item">You can save 5 hours a day.</div>
+                        <div class="short-item">You can reduce the number of re-done pieces.</div>
+                        <div class="short-item">You can reduce project delays.</div>
+    
+                    </div>
+                </div>
+
+            </div>
+            <div id="quick-tips" class="area-container">
+                <div class="overview-text">This is our quick assessment of what you could implement:</div>
+                <div class="tips-container" id="quick-tips-inner">
+                    <div class="tip">
+                        <div class="tip-cat">
+                            <p class="tip-text">e-commerce</p>
+                        </div>
+                        <div class="inner-tip">
+                            <div class="tip-content">
+                                <div class="tip-left"></div>
+                                <div class="tip-right">
+                                    <div class="tip-benefit">Reduce production mistakes.</div>
+                                    <div class="tip-task">Use a centralised production management tool.</div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <div class="tip-cat">
+                            <p class="tip-text">e-commerce</p>
+                        </div>
+                        <div class="inner-tip">
+                            <div class="tip-content">
+                                <div class="tip-left"></div>
+                                <div class="tip-right">
+                                    <div class="tip-benefit">Reduce production mistakes.</div>
+                                    <div class="tip-task">Use a centralised production management tool.</div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="detailed-results" class="area-container">
+                <div class="overview-text">Here's your detailed assessment. You've got all of this information on email as well.</div>
+                <div class="tips-container">
+                    <div class="detailed-section" id="detailed-tips">
+                        <div class="detailed-category">
+                            <div class="detailed-title">E-Commerce</div>
+                            <div class="detailed-body">
+                            <div class="problem">
+                                This is what you said your problem was. This is the solution. 
+                            </div>
+                            <div class="solution">
+                                This is what you can do to fix this. 
+                            </div>
+                        </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
 
         </div>
         <div id="final-section">
+            <p class="text-query">Want to discuss your results? Claim your free consultancy session. </p>
             <div class="cta-container">
                 <a href="https://calendly.com/theproblemcomp/introcall?month=2025-03">
                     <div class="cta-button">
@@ -217,6 +303,7 @@
     <div id="stickybot">
     </div>
     <script>
+            
             const sliderHandle = document.querySelector(".sliderHandle");
             const sliderContainer = document.querySelector(".sliderBar");
             const sliderValueDisplay = document.querySelector(".sliderValue");
@@ -266,10 +353,47 @@
 
     </script>
     <script>
+                console.log('CSV is located at')
                 var csv_values = []
 
+                var ecomm_problem_time = 0
+                var ecomm_solution_time = 0
+
+                var prod_problem_time = 0
+                var prod_solution_time = 0
+
+                var design_problem_time = 0
+                var design_solution_time = 0
+
+                var prototyping_problem_time = 0
+                var prototyping_solution_time = 0
+
+                var ecomm_weight = 0
+                var prod_weight = 0
+                var design_weight = 0
+                var prototyping_weight = 0
+
+                var ecomm_reinforcement = []
+                var prod_reinforcement = []
+                var design_reinforcement = []
+                var prototyping_reinforcement = []
+
+                var ecomm_problem_titles = []
+                var ecomm_solution_list = []
+
+                var prod_problem_titles = []
+                var prod_solution_list = []
+
+                var design_problem_titles = []
+                var design_solution_list = []
+
+                var prototyping_problem_titles = []
+                var prototyping_solution_list = []
+
+
+
                 function fetch_csv(){
-                    fetch('./quiz_response.csv').then(response => response.text()).then(text => {
+                    fetch('/src/quiz_response.csv').then(response => response.text()).then(text => {
                     //console.log(text)
                     const result = Papa.parse(text, { header: true }); // Parse CSV with headers
                     csv_values = result.data; // Array of objects
@@ -280,35 +404,335 @@
                     
                 }
 
-                function edit_response() {
-                    fetch('./quiz_response.csv').then(response => response.text()).then(text => {
+                function edit_response(problems) {
+                    console.log('edit response function is running')
+                    fetch('/src/quiz_response.csv').then(response => response.text()).then(text => {
                     //console.log(text)
                     const result = Papa.parse(text, { header: true }); // Parse CSV with headers
                     const data = result.data; // Array of objects
-                    const targetColumn = "Solution"; // Change to your desired header
-                    if (!data[0] || !data[0][targetColumn]) {
-                        console.error(`Header "${targetColumn}" not found.`);
-                        return;
-                    }
+                  
+                    const problemIdcol = 'Problem ID'
+                    const problemSubCat = 'Sub Category'
+                    const problemCat = 'Category'
+                    const problemTitle = 'Problem Print Title'
+                    const reinforcement = 'Benefit Reinforcement'
+                    const problemTime = 'Problem Time'
+                    const solutionTime = 'Benefit Time'
+                    const problemWeight = 'Problem Weight'
+                    const problemText = 'Problem text'
+                    const solution = 'Solution'
+                    console.log(`problem col is ${problems}`)
 
-                    const container = document.querySelector('#response-div');
-                    container.innerHTML = ''; // Clear previous content
+                    //modify here
+
+                    const summarycatdiv = document.querySelector('#summary-cat');
+                    const summaryshortdiv = document.querySelector('#summary-short');
+                    const tipscontainer = document.querySelector('.tips-container')
+                    const detailedsection = document.querySelector('.detailed-section')
+                    summarycatdiv.innerHTML = '';
+                    summaryshortdiv.innerHTML = '';
+                    tipscontainer.innerHTML = '';
+                    detailedsection.innerHTML= '';
+
 
                     data.forEach(row => {
-                        const cellValue = row[targetColumn]?.trim(); // Get value from column
-                        if (cellValue) {
-                        const div = document.createElement('div');
-                        div.classList.add('csv-row');
+                        const problemArray = row[problemIdcol].split(", ").map(str => str.trim());
+                        console.log(problemArray, problems)
+                        problem_match = problemArray.some(item => problems.includes(item));
+                        console.log(problem_match)
 
-                        const p = document.createElement('p');
-                        p.textContent = cellValue; // Set div text to row text
 
-                        div.appendChild(p);
-                        container.appendChild(div);
+                        if (problem_match){
+                            console.log('edit_response function: problemID found')
+                            problem_time = row[problemTime]
+                            problem_weight = row[problemWeight]
+                            solution_time = row[solutionTime]
+                            reinforcement_item = row[reinforcement]
+
+                            console.log(`problem weight is ${problem_weight}`)
+                            console.log(`reinforcement item is ${reinforcement_item}`)
+
+                            const reinforcementArray = Array.isArray(reinforcement_item) ? reinforcement_item : [reinforcement_item];
+                            
+                        
+
+                            if (row[problemCat] == 'ecommerce') {
+                                ecomm_weight = +ecomm_weight + +problem_weight
+                                ecomm_problem_time = +ecomm_problem_time + +problem_time
+                                ecomm_solution_time = +ecomm_solution_time + +solution_time
+                                ecomm_problem_title = row[problemTitle]
+                                ecomm_problem_titles.push(ecomm_problem_title)
+                                ecomm_solution_title = row[solution]
+                                ecomm_solution_list.push(ecomm_solution_title)
+
+                                const hasReinforcementMatch = reinforcementArray.some(item => ecomm_reinforcement.includes(item));
+
+                                if(!hasReinforcementMatch){
+                                    ecomm_reinforcement.push(reinforcement_item)
+                                }
+
+                                
+                                console.log(`ecomm weight is ${ecomm_weight}`)
+                                
+
+                                return ecomm_weight
+
+                            }
+
+                            if (row[problemCat] == 'production') {
+                                prod_weight = +prod_weight + +problem_weight
+                                prod_problem_time = +prod_problem_time + +problem_time
+                                prod_solution_time = +prod_solution_time + +solution_time
+                                prod_problem_title = row[problemTitle]
+                                prod_problem_titles.push(prod_problem_title)
+                                prod_solution_title = row[solution]
+                                prod_solution_list.push(prod_solution_title)
+
+                                const hasReinforcementMatch = reinforcementArray.some(item => prod_reinforcement.includes(item));
+
+                                if(!hasReinforcementMatch){
+                                    prod_reinforcement.push(reinforcement_item)
+                                }
+
+                                return prod_weight
+                                
+                            }
+
+                            if (row[problemCat] == 'design') {
+                                design_weight = +design_weight + +problem_weight
+                                design_problem_time= +design_problem_time + +problem_time
+                                design_solution_time= +design_solution_time + +solution_time
+                                design_problem_title = row[problemTitle]
+                                design_problem_titles.push(design_problem_title)
+                                design_solution_title = row[solution]
+                                design_solution_list.push(design_solution_title)
+
+                                const hasReinforcementMatch = reinforcementArray.some(item => design_reinforcement.includes(item));
+
+                                if(!hasReinforcementMatch){
+                                    design_reinforcement.push(reinforcement_item)
+                                }
+
+                                return design_weight
+                                
+                            }
+
+                            if (row[problemCat] == 'prototyping') {
+                                prototyping_weight = +prototyping_weight + +problem_weight
+                                prototyping_problem_time= +prototyping_problem_time + +problem_time
+                                prototyping_solution_time= +prototyping_solution_time + +solution_time
+                                prototyping_problem_title = row[problemTitle]
+                                prototyping_problem_titles.push(prototyping_problem_title)
+                                
+                                prototyping_solution_title = row[solution]
+                                prototyping_solution_list.push(prototyping_solution_title)
+
+                                const hasReinforcementMatch = reinforcementArray.some(item =>prototyping_reinforcement.includes(item));
+
+                                if(!hasReinforcementMatch){
+                                    prototyping_reinforcement.push(reinforcement_item)
+                                }
+
+                                return prototyping_weight
+                                
+                            }
+
                         }
+                        
                     });
+
+
+                    console.log(`ecomm reinforcement looks like this before splitting ${ecomm_reinforcement}`)
+                    const [ecomm_benefits, ecomm_tasks] = ecomm_reinforcement
+                    .map(item => item.split('|').map(s => s.trim()))
+                    .reduce(([arr0, arr1], [first, second]) => ([ [...arr0, first], [...arr1, second] ]), [[], []]);
+
+
+                    const [prod_benefits, prod_tasks] = prod_reinforcement
+                    .map(item => item.split('|').map(s => s.trim()))
+                    .reduce(([arr0, arr1], [first, second]) => ([ [...arr0, first], [...arr1, second] ]), [[], []]);
+
+                    const [design_benefits, design_tasks] = design_reinforcement
+                    .map(item => item.split('|').map(s => s.trim()))
+                    .reduce(([arr0, arr1], [first, second]) => ([ [...arr0, first], [...arr1, second] ]), [[], []]);
+
+                    const [prototyping_benefits, prototyping_tasks] = prototyping_reinforcement
+                    .map(item => item.split('|').map(s => s.trim()))
+                    .reduce(([arr0, arr1], [first, second]) => ([ [...arr0, first], [...arr1, second] ]), [[], []]);
+
+
+    
+
+
+                    // LEFT TO DO: add in number of hours saved/ reinforcement.
+                    problem_dict = {
+                        'ecommerce':{
+                            weight: ecomm_weight, 
+                            message: `you could be gaining at least ${ecomm_problem_time/60} hours a day`, 
+                            benefit: ecomm_benefits, 
+                            reinforcement: ecomm_tasks, 
+                            problems: ecomm_problem_titles, 
+                            solutions: ecomm_solution_list
+                        }, 
+                        'production':{
+                            weight: prod_weight, 
+                            message: `you could be gaining at least ${prod_problem_time/60} hours a day`, 
+                            benefit: prod_benefits,
+                            reinforcement: prod_tasks, 
+                            problems: prod_problem_titles, 
+                            solutions: prod_solution_list
+                        }, 
+                        'design':{
+                            weight: design_weight, 
+                            message: `you could be saving ${design_problem_time/60} hours a day`, 
+                            benefit: design_benefits,
+                            reinforcement: design_tasks, 
+                            problems: design_problem_titles, 
+                            solutions: design_solution_list
+                        }, 
+                        'prototyping':{
+                            weight: prototyping_weight, 
+                            message: `you could be saving ${prototyping_problem_time/60} hours a day`, 
+                            benefit: prototyping_benefits,
+                            reinforcement: prototyping_tasks, 
+                            problems: prototyping_problem_titles, 
+                            solutions: prototyping_solution_list
+                        }
+                    }
+                    
+
+                    const sortedProblems = Object.entries(problem_dict)
+                        .sort((a, b) => b[1].weight - a[1].weight) // Sort by weight in descending order
+                        .reduce((acc, [key, value]) => {
+                            acc[key] = value;
+                            return acc;
+                        }, {});
+
+                    let count = 0;
+
+                    for (const [key, value] of Object.entries(sortedProblems)) {
+                       console.log('function')
+
+                       if (!value.problems.length == 0) {
+                            var category_div = document.createElement('div')
+                            category_div.classList.add('detailed-category')
+                            detailedsection.appendChild(category_div)
+
+                            var detailed_title_div = document.createElement('div')
+                            detailed_title_div.classList.add('detailed-title')
+                            detailed_title_div.innerHTML = key; 
+
+                            var detailed_body = document.createElement('div')
+                            detailed_body.classList.add('detailed-body')
+
+                            category_div.appendChild(detailed_title_div)
+
+
+                            for (let i = 0; i < value.problems.length; i++) {
+                                var problem_text = document.createElement('div')
+                                problem_text.classList.add('problem')
+                                problem_text.innerHTML = value.problems[i]
+
+                                var solution_text = document.createElement('div')
+                                solution_text.classList.add('solution')
+                                solution_text.innerHTML = value.solutions[i]
+
+                                let existingProblem = Array.from(detailed_body.querySelectorAll('.problem'))
+                                    .find(p => p.innerHTML.trim() === value.problems[i].trim());
+
+                                if (existingProblem) {
+                                    existingProblem.insertAdjacentElement('afterend', solution_text);
+                                } else {
+                                    detailed_body.appendChild(problem_text);
+                                    detailed_body.appendChild(solution_text);
+                                }
+
+
+                            }
+                            
+                            category_div.appendChild(detailed_body)
+                    }}
+                    
+                    for (const [key, value] of Object.entries(sortedProblems)) {
+                        if (!value.benefit.length == 0) {
+                            var tip_div = document.createElement('div');
+                            tip_div.classList.add('tip');
+                            var tip_title_div = document.createElement('div')
+                            tip_title_div.classList.add('tip-cat')
+                            var tip_title_text = document.createElement('p')
+                            tip_title_text.textContent = key
+                            tip_title_text.classList.add('tip-text')
+                            tip_title_div.appendChild(tip_title_text)
+                            tip_div.appendChild(tip_title_div)
+
+                            var tip_content_div = document.createElement('div')
+                            tip_content_div.classList.add('inner-tip')
+
+                            for (let i = 0; i < value.benefit.length; i++) {
+
+                                var tip_inner_div = document.createElement('div')
+                                tip_inner_div.classList.add('tip-content')
+
+                                var tip_left = document.createElement('div')
+                                tip_left.classList.add('tip-left')
+
+                                var tip_right = document.createElement('div')
+                                tip_right.classList.add('tip-right')
+
+                                var tip_benefit = document.createElement('div')
+                                tip_benefit.classList.add('tip-benefit')
+                                tip_benefit.innerHTML = value.benefit[i]
+
+                                var tip_task = document.createElement('div')
+                                tip_task.classList.add('tip-task')
+                                tip_task.innerHTML = value.reinforcement[i]
+
+                                tip_right.appendChild(tip_benefit)
+                                tip_right.appendChild(tip_task)
+
+                                tip_inner_div.appendChild(tip_left)
+                                tip_inner_div.appendChild(tip_right)
+
+                                tip_content_div.appendChild(tip_inner_div)
+
+                            
+                        }
+
+                        tip_div.appendChild(tip_content_div);
+                        tipscontainer.appendChild(tip_div);
+
+                        }
+                        
+                    }
+
+
+                    for (const [key, value] of Object.entries(sortedProblems)) {
+                        var cat_item_div = document.createElement('div');
+                        cat_item_div.classList.add('cat-item');
+                        cat_item_div.innerHTML = key;
+
+                        summarycatdiv.appendChild(cat_item_div);
+
+                        var short_item_div = document.createElement('div')
+                        short_item_div.classList.add('short-item')
+                        short_item_div.innerHTML = value.message;
+
+                        summaryshortdiv.appendChild(short_item_div)
+
+                        count++;
+                        if (count === 2) break; 
+                    }
+
+                    console.log('this function has stopped running')
+                    setTimeout(() => sendEmail(name, userEmail), 5000);
+
                     })
+                    //setTimeout(() => sendtoMailChimp(name, userEmail, companySize), 2000)
                     .catch(error => console.error('Error fetching CSV:', error));
+                
+                
+
+                    
                 }
     </script>
 
@@ -318,9 +742,16 @@
         
 
         selected_items = [];
+        selected_problems = []
+        let userEmail = '';
+        let userName = '';
+        let companySize = '5-10';
 
 
         function mark_selected(name){
+            var next_section = document.querySelector(".tick-row")
+            next_section.style.display="flex"
+
             item = document.querySelector('#'+name)
             if (selected_items.includes(name)) {
                
@@ -339,43 +770,115 @@
 
             get_problems()
      
-                return selected_items
+            return selected_items
 
+        }
+
+        function mark_selected_problems(problemID){
+            var next_section = document.querySelector("#basic-info")
+            var submit_section = document.querySelector("#submit-area")
+            next_section.style.visibility="visible"
+            submit_section.style.display="flex"
+
+            console.log('mark selected problems function running')
+
+            id_selector = '#'+problemID
             
+            item = document.querySelector(id_selector)
+            
+            if (selected_problems.includes(problemID)) {
+                    console.log('removing class because double click')
+                    console.log(problemID)
+               
+                    item.classList.remove('selected');
+                    const index = selected_problems.indexOf(`${problemID}`);
+                    selected_problems.splice(index, 1);
+                    console.log(selected_problems);
+                        
 
-         
-
+            } else {
+                    item.classList.add('selected');
+                    console.log('problem clicked and selected');
+                    selected_problems.push(problemID);
+                    console.log(selected_problems);
+            }
+     
+            return selected_problems
         }
 
         function validateEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
             }
+        
+        function make_pdf(){
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text("Hello, this is a sample PDF document!", 10, 10);
 
-        function sendEmail(name, email, industry, selected_items, custom_value, error_div) {
+            // Get the PDF as a base64 string
+            const pdfBase64 = doc.output('datauristring');
+
+            return pdfBase64
+        }
+
+        function sendtoMailChimp(name, email, industry) {
+                const form = document.getElementById("mc-embedded-subscribe-form");
+                
+                if (!form) {
+                    console.error("Mailchimp form not found!");
+                    return;
+                }
+
+                document.getElementById("mce-EMAIL").value = userEmail;
+                document.getElementById("mce-FNAME").value = userName;
+                //document.getElementById("mce-MMERGE6").value = companyName
+                document.getElementById("mce-MMERGE7").value = companySize;
+                //document.getElementById("mce-MMERGE8").value = userIndustry;
+
+                form.submit();
+                console.log('subscribed to mailchimp')
+
+        }
+
+        function sendEmail(name, email) {
             
-            //let userEmail = document.getElementById("userEmail").value;
-            let userEmail = email
 
             if (!userEmail) {
                 alert("Please enter your email!");
                 return;
             }
 
+            //var quizResultsContent = document.querySelector('#response-div').innerHTML;
+
             let params = {
+                name: userName,
                 to_email: userEmail,
-                message: `hello ${name}, your industry is ${industry} and your selected items are ${selected_items}, your custom value is ${custom_value}`
+                summaryTitle: Array.from(document.querySelectorAll('.cat-item')).map(el => el.innerHTML),
+                summaryPrint: document.querySelector('#summary-short').innerHTML,
+                quickOverview: document.querySelector('#quick-tips-inner').innerHTML,
+                detailedResults: Array.from(document.querySelectorAll('.tip')).map(el => el.innerHTML),
             };
 
-            emailjs.send("service_b2qvdil","template_hemvkcl",params).then(error_div.textContent = "Email sent successfully!").catch(error => alert("Error sending email: " + error));
+            emailjs.send("service_b2qvdil","template_hemvkcl",params)
                 
         }
 
+        
+
         function get_response(industry, type_array){
-            get_problems_div = document.querySelector("#tick-inner")
-            get_problems_div.innerHTML = ''; 
+            get_problems_div = document.querySelector(".tick-inner")
+            get_ecomm_div = document.querySelector(".tick-ecomm")
+            get_prod_div = document.querySelector(".tick-prod")
+            get_design_div = document.querySelector(".tick-design")
+            get_prototyping_div = document.querySelector(".tick-prototyping")
+
+            ecomm_title = document.querySelector(".ecomm-title")
+            prod_title = document.querySelector(".prod-title")
+            design_title = document.querySelector(".design-title")
+            prototyping_title = document.querySelector(".prototyping-title")
             
-            fetch('./quiz_response.csv').then(response => response.text()).then(text => {
+            fetch('/src/quiz_response.csv').then(response => response.text()).then(text => {
                     //console.log(text)
                     const result = Papa.parse(text, { header: true }); // Parse CSV with headers
                     data = result.data; // Array of objects
@@ -383,6 +886,7 @@
                     
                     var csv_problem_index = 'Category';
                     var csv_problem_text = 'Problem text';
+                    var csv_problem_id = 'Problem ID';
                     if (!data[0] || !data[0][csv_industry_index]) {
                         console.error(`Header "${csv_industry_index}" not found.`);
                         return;
@@ -393,11 +897,17 @@
 
                     let problems_industry = []
                     let problems_category = []
+
+                    get_ecomm_div.innerHTML = ''
+                    get_prod_div.innerHTML = ''
+                    get_design_div.innerHTML = ''
+                    get_prototyping_div.innerHTML = ''
                     
     
                     data.forEach(row => {
                         csv_industry_row = row[csv_industry_index]
                         csv_problem_row = row[csv_problem_index]
+                        problem_id = String(row[csv_problem_id])
                         const categoryArray = csv_problem_row.split(", ").map(str => str.trim());
                         const industryArray = csv_industry_row.split(", ").map(str => str.trim());
                         csv_problem_input = row[csv_problem_text]
@@ -416,15 +926,82 @@
                             const cellValue = csv_problem_input?.trim(); // Get value from column
                             console.log(cellValue)
                             if (cellValue) {
-                                const div = document.createElement('div');
-                                div.classList.add('tick-problem');
+                                console.log(`from inner cell value ${csv_problem_row}`)
+                                if (csv_problem_row == 'ecommerce'){
+                    
+                                    ecomm_title.style.display = "inline"
+                                    const div = document.createElement('div');
+                                    div.classList.add('tick-problem');
+                                    console.log(`problem log is ${problem_id}`)
+                                    div.setAttribute('onclick', `mark_selected_problems('${problem_id}')`)
+                                    div.id = problem_id;
 
-                                const p = document.createElement('p');
-                                p.classList.add('tick-text');
-                                p.textContent = cellValue; // Set div text to row text
+                                    const p = document.createElement('p');
+                                    p.classList.add('tick-text');
+                                    p.textContent = cellValue; // Set div text to row text
 
-                                div.appendChild(p);
-                                get_problems_div.appendChild(div);
+                                    div.appendChild(p);
+                                    get_ecomm_div.appendChild(div);
+
+
+                                    }
+                                
+                                if (csv_problem_row == 'production'){
+                                    
+                                    prod_title.style.display = "inline"
+                                    const div = document.createElement('div');
+                                    div.classList.add('tick-problem');
+                                    console.log(`problem log is ${problem_id}`)
+                                    div.setAttribute('onclick', `mark_selected_problems('${problem_id}')`)
+                                    div.id = problem_id;
+
+                                    const p = document.createElement('p');
+                                    p.classList.add('tick-text');
+                                    p.textContent = cellValue; // Set div text to row text
+
+                                    div.appendChild(p);
+                                    get_prod_div.appendChild(div);
+
+
+                                    }
+                                
+                                if (csv_problem_row == 'design'){
+                                    
+                                    design_title.style.display = "inline"
+                                    const div = document.createElement('div');
+                                    div.classList.add('tick-problem');
+                                    console.log(`problem log is ${problem_id}`)
+                                    div.setAttribute('onclick', `mark_selected_problems('${problem_id}')`)
+                                    div.id = problem_id;
+
+                                    const p = document.createElement('p');
+                                    p.classList.add('tick-text');
+                                    p.textContent = cellValue; // Set div text to row text
+
+                                    div.appendChild(p);
+                                    get_design_div.appendChild(div);
+
+
+                                }
+
+                                if (csv_problem_row == 'prototyping'){
+                                    
+                                    prototyping_title.style.display = "inline"
+                                    const div = document.createElement('div');
+                                    div.classList.add('tick-problem');
+                                    console.log(`problem log is ${problem_id}`)
+                                    div.setAttribute('onclick', `mark_selected_problems('${problem_id}')`)
+                                    div.id = problem_id;
+
+                                    const p = document.createElement('p');
+                                    p.classList.add('tick-text');
+                                    p.textContent = cellValue; // Set div text to row text
+
+                                    div.appendChild(p);
+                                    get_prototyping_div.appendChild(div);
+
+
+                                }
                                 }
                         }
 
@@ -453,28 +1030,43 @@
             const user_email = document.querySelector("#user-email");
             const custom_value = currentValue; 
             const error_div = document.querySelector("#error-message")
+
+            const email_agree = document.querySelector('#email-marketing')
+            const quiz_agree = document.querySelector('#quiz-store')
             
             var industry = input_answer.options[input_answer.selectedIndex].value;
             var name = user_name.value;
+            userName = name;
             var email = user_email.value;
+
 
             try {
                 if (!name) throw new Error("Name field cannot be empty.");
+                if (selected_items.length == 0) throw new Error("Activities selected cannot be none.");
+                if (selected_problems.length == 0) throw new Error("Problems faced cannot be none.");
                 if (!email) throw new Error("Email field cannot be empty.");
                 if (input_answer.length == 1) throw new Error("Industry field cannot be empty.");
-                if (custom_value == 0) throw new Error("Custom scale field cannot be empty.");
+                //if (custom_value == 0) throw new Error("Custom scale field cannot be empty.");
                 if (!validateEmail(email)) throw new Error("Invalid email format.");
+                if (!email_agree.checked) throw new Error("We need your email communication consent to be able to send your results via email.");
+                if (!quiz_agree.checked) throw new Error("We need your data storage consent in order to be able to process your results.");
 
                 // Clear error message if everything is fine
                 error_div.textContent = "";
                 
                 error_div.textContent = "Form submitted successfully!";
-                //sendEmail(name, email, industry, selected_items, custom_value, error_div);
+                
 
                 const quiz_body = document.querySelector("#quiz-body")
                 quiz_body.style.display="none"
+
+                userEmail = user_email.value;
+                
                 const response_body = document.querySelector("#response-body")
                 response_body.style.display= "flex"
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                edit_response(selected_problems)
+                
 
             } catch (error) {
                 error_div.textContent = error.message;
